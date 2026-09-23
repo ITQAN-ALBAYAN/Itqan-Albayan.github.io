@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية إتقان البيان | لتعليم التجويد واللغات</title>
+    
+    <!-- 2. تحسينات الـ SEO والكلمات المفتاحية (SEO Optimization) -->
+    <title>أكاديمية إتقان البيان | لتعليم التجويد واللغات عن بعد</title>
+    <meta name="description" content="أكاديمية إتقان البيان لتعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى دورات تمكين مهارات اللغتين العربية والإنجليزية تحت إشراف معلمين مجازين.">
+    <meta name="keywords" content="أكاديمية تجويد, تعليم التجويد عن بعد, إتقان البيان, إجازة قرآنية, مخارج الحروف, دورات لغة عربية, تعلم التجويد, قران كريم بسند, Learn Tajweed online, Arabic academy">
+    <meta name="robots" content="index, follow">
+    
+    <!-- وسم الأرشفة لمنصات التواصل الاجتماعي (Open Graph) -->
+    <meta property="og:title" content="أكاديمية إتقان البيان | لتعليم التجويد واللغات">
+    <meta property="og:description" content="رتّل القرآن بإتقان وانطلق في عالم البيان. دورات تجويد مكثفة وإجازات مسندة ولغات لجميع الأعمار.">
+    <meta property="og:type" content="website">
+
     <!-- تضمين مكتبة Tailwind CSS للتصميم الحديث -->
     <script src="https://tailwindcss.com"></script>
     <!-- تضمين خطوط جوجل لجمالية النص العربي والإنجليزي -->
@@ -38,7 +49,8 @@
                 <!-- الروابط الرئيسية -->
                 <div class="hidden md:flex space-x-reverse space-x-8 font-medium" id="nav-links">
                     <a href="#hero" id="link-home" class="text-emerald-600 hover:text-emerald-700 transition">الرئيسية</a>
-                    <a href="#programs" id="link-programs" class="text-slate-600 hover:text-emerald-600 transition">برامجنا التعليمية</a>
+                    <a href="#programs" id="link-programs" class="text-slate-600 hover:text-emerald-600 transition">برامجنا</a>
+                    <a href="#quiz-section" id="link-quiz" class="text-slate-600 hover:text-emerald-600 transition">اختبر تجويدك</a>
                     <a href="#faq" id="link-faq" class="text-slate-600 hover:text-emerald-600 transition">الأسئلة الشائعة</a>
                     <a href="#register" id="link-reg" class="text-slate-600 hover:text-emerald-600 transition">التسجيل</a>
                 </div>
@@ -72,6 +84,9 @@
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <a href="#register" id="hero-btn-1" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-3.5 rounded-xl shadow-lg transition">
                     ابدأ رحلتك التعليمية الآن
+                </a>
+                <a href="#quiz-section" id="hero-btn-2" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 text-lg font-semibold px-8 py-3.5 rounded-xl border border-slate-700 transition">
+                    حدد مستواك في التجويد ثوانٍ
                 </a>
             </div>
         </div>
@@ -111,35 +126,20 @@
         </div>
     </section>
 
+    <!-- 1. أداة اختبار التجويد التفاعلية (Quiz Section Placeholder) -->
+    <section id="quiz-section" class="py-16 bg-emerald-50/50 border-y border-emerald-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 id="quiz-sec-title" class="text-3xl font-bold text-slate-950 mb-3">أداة تحديد المستوى السريع</h2>
+            <p id="quiz-sec-desc" class="text-slate-600 mb-8 max-w-xl mx-auto">اختبر معلوماتك التجويدية الأساسية في دقيقة واحدة واكتشف ما تحتاجه للوصول إلى مرتبة المهرة بالقرآن.</p>
+            
+            <!-- سيتم هنا تضمين الأداة التفاعلية لتحديد المستوى تلقائياً -->
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-slate-100">
+                <div id="interactive-quiz-container">
+                    <!-- سيتم تحميل الأداة أدناه -->
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- قسم الأسئلة الشائعة (FAQ) -->
     <section id="faq" class="bg-slate-100 py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 id="faq-title" class="text-3xl font-bold text-slate-950 mb-4">الأسئلة الشائعة</h2>
-                <p id="faq-subtitle" class="text-slate-600">كل ما تود معرفته عن نظام الدراسة، المواعيد، والأسعار.</p>
-            </div>
-
-            <div class="space-y-4">
-                <!-- سؤال 1 -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition">
-                        <span id="q1" class="font-semibold text-slate-900 text-lg">ما هي المواعيد المتاحة للحلقات والمحاضرات؟</span>
-                        <span class="faq-icon transition-transform duration-300 text-emerald-600 font-bold">▼</span>
-                    </div>
-                    <div class="faq-answer px-6 pb-6 text-slate-600 leading-relaxed">
-                        <p id="a1">نحن نوفر مرونة كاملة على مدار 24 ساعة؛ حيث يمكنك التنسيق مباشرة مع المعلم لجدولة المواعيد التي تناسب أوقات فراغك أو عملك، سواء كنت داخل الوطن العربي أو خارجه.</p>
-                    </div>
-                </div>
-
-                <!-- سؤال 2 -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition">
-                        <span id="q2" class="font-semibold text-slate-900 text-lg">ما هي تكلفة ورسوم الدراسة بالأكاديمية؟</span>
-                        <span class="faq-icon transition-transform duration-300 text-emerald-600 font-bold">▼</span>
-                    </div>
-                    <div class="faq-answer px-6 pb-6 text-slate-600 leading-relaxed">
-                        <p id="a2">تختلف الرسوم بناءً على المسار التعليمي المختار وعدد الحصص الأسبوعية الفردية أو الجماعية. نقدم خطط أسعار تنافسية تبدأ من باقات شهرية ميسرة، مع تقديم حصة تجريبية مجانية تماماً.</p>
-                    </div>
-                </div>
-
-                <!-- سؤال 3 -->
