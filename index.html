@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="html-tag">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أكاديمية إتقان البيان | لتعليم التجويد واللغات</title>
     <!-- تضمين مكتبة Tailwind CSS للتصميم الحديث -->
     <script src="https://tailwindcss.com"></script>
-    <!-- تضمين خطوط جوجل لجمالية النص العربي -->
+    <!-- تضمين خطوط جوجل لجمالية النص العربي والإنجليزي -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; }
+        :lang(ar) { font-family: 'Cairo', sans-serif; }
+        :lang(en) { font-family: 'Inter', sans-serif; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-active .faq-answer { max-height: 200px; }
+        .faq-active .faq-icon { transform: rotate(180deg); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 transition-all duration-300">
 
     <!-- شريط التنقل العلوي (Navbar) -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
@@ -26,23 +30,25 @@
                         إب
                     </div>
                     <div>
-                        <span class="text-xl font-bold text-slate-900 block leading-tight">إتقان البيان</span>
-                        <span class="text-xs text-emerald-600 font-semibold">لعلوم القرآن واللغات</span>
+                        <span id="nav-title" class="text-xl font-bold text-slate-900 block leading-tight">إتقان البيان</span>
+                        <span id="nav-subtitle" class="text-xs text-emerald-600 font-semibold">لعلوم القرآن واللغات</span>
                     </div>
                 </div>
                 
                 <!-- الروابط الرئيسية -->
-                <div class="hidden md:flex space-x-reverse space-x-8 font-medium">
-                    <a href="#hero" class="text-emerald-600 hover:text-emerald-700 transition">الرئيسية</a>
-                    <a href="#programs" class="text-slate-600 hover:text-emerald-600 transition">برامجنا التعليمية</a>
-                    <a href="#features" class="text-slate-600 hover:text-emerald-600 transition">لماذا نحن؟</a>
-                    <a href="#contact" class="text-slate-600 hover:text-emerald-600 transition">اتصل بنا</a>
+                <div class="hidden md:flex space-x-reverse space-x-8 font-medium" id="nav-links">
+                    <a href="#hero" id="link-home" class="text-emerald-600 hover:text-emerald-700 transition">الرئيسية</a>
+                    <a href="#programs" id="link-programs" class="text-slate-600 hover:text-emerald-600 transition">برامجنا التعليمية</a>
+                    <a href="#faq" id="link-faq" class="text-slate-600 hover:text-emerald-600 transition">الأسئلة الشائعة</a>
+                    <a href="#register" id="link-reg" class="text-slate-600 hover:text-emerald-600 transition">التسجيل</a>
                 </div>
 
-                <!-- تغيير اللغة وزر التسجيل -->
+                <!-- زر تغيير اللغة وزر التسجيل -->
                 <div class="flex items-center space-x-reverse space-x-4">
-                    <button class="text-sm font-semibold text-slate-500 hover:text-emerald-600 transition">English</button>
-                    <a href="#contact" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition transform hover:-translate-y-0.5">
+                    <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-600 px-3 py-1.5 rounded-lg border border-slate-200 transition">
+                        English
+                    </button>
+                    <a href="#register" id="nav-register-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition transform hover:-translate-y-0.5">
                         سجل معنا الآن
                     </a>
                 </div>
@@ -52,25 +58,20 @@
 
     <!-- القسم الرئيسي (Hero Section) -->
     <section id="hero" class="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
-        <!-- خلفية جمالية خفيفة -->
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-block bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-emerald-500/30">
+            <span id="hero-tag" class="inline-block bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-emerald-500/30">
                 مرحباً بكم في أكاديمية إتقان البيان
             </span>
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            <h1 id="hero-title" class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
                 رتّل القرآن <span class="text-emerald-400">بإتقان</span>، وانطلق في عالم <span class="text-emerald-400">البيان</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p id="hero-desc" class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
                 منصة أكاديمية متخصصة في تعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى تمكين وتطوير مهارات اللغتين العربية والإنجليزية.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#programs" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-3.5 rounded-xl shadow-lg transition">
-                    استكشف المسارات التعليمية
-                </a>
-                <a href="#features" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 text-lg font-semibold px-8 py-3.5 rounded-xl border border-slate-700 transition">
-                    اكتشف مميزات الأكاديمية
+                <a href="#register" id="hero-btn-1" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-3.5 rounded-xl shadow-lg transition">
+                    ابدأ رحلتك التعليمية الآن
                 </a>
             </div>
         </div>
@@ -79,80 +80,66 @@
     <!-- قسم البرامج التعليمية (Programs Section) -->
     <section id="programs" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-950 mb-4">برامجنا ومساراتنا التعليمية</h2>
-            <p class="text-slate-600 max-w-2xl mx-auto">نقدم مناهج دراسية متكاملة مصممة لتناسب مختلف المستويات والأعمار تحت إشراف نخبة من المتخصصين.</p>
+            <h2 id="prog-title" class="text-3xl md:text-4xl font-bold text-slate-950 mb-4">برامجنا ومساراتنا التعليمية</h2>
+            <p id="prog-desc" class="text-slate-600 max-w-2xl mx-auto">نقدم مناهج دراسية متكاملة مصممة لتناسب مختلف المستويات والأعمار تحت إشراف نخبة من المتخصصين.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- مسار التجويد (رئيسي) -->
             <div class="bg-white border-2 border-emerald-500 rounded-2xl p-8 shadow-xl relative transform md:-translate-y-4">
-                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                <div id="badge-main" class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
                     المسار الرئيسي
                 </div>
                 <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6">📖</div>
-                <h3 class="text-2xl font-bold text-slate-950 mb-3">علوم القرآن والتجويد</h3>
-                <p class="text-slate-600 mb-6 leading-relaxed">تصحيح التلاوة، شرح متون التجويد (التحفة والجزرية)، ومخارج الحروف بدقة، مع إمكانية الحصول على الإجازة بالسند المتصل.</p>
-                <ul class="text-sm text-slate-600 space-y-2 mb-6">
-                    <li class="flex items-center">✨ دراسة نظرية وتطبيقية مكثفة</li>
-                    <li class="flex items-center">✨ معلمين ومقرئين مجازين</li>
-                </ul>
+                <h3 id="card1-title" class="text-2xl font-bold text-slate-950 mb-3">علوم القرآن والتجويد</h3>
+                <p id="card1-desc" class="text-slate-600 mb-6 leading-relaxed">تصحيح التلاوة، شرح متون التجويد (التحفة والجزرية)، ومخارج الحروف بدقة، مع إمكانية الحصول على الإجازة بالسند المتصل.</p>
             </div>
 
             <!-- مسار اللغة العربية (ثانوي) -->
             <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-md hover:shadow-lg transition">
                 <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6">🕌</div>
-                <h3 class="text-2xl font-bold text-slate-950 mb-3">اللغة العربية والبيان</h3>
-                <p class="text-slate-600 mb-6 leading-relaxed">تعليم النحو، الصرف، والبلاغة للأقحاح والناطقين بغيرها، لتعزيز فصاحة اللسان وفهم معاني الخطاب العربي الفصيح.</p>
-                <ul class="text-sm text-slate-600 space-y-2 mb-6">
-                    <li class="flex items-center">🔹 تحسين مهارات التحدث والكتابة</li>
-                    <li class="flex items-center">🔹 مناهج مبسطة وعصرية</li>
-                </ul>
+                <h3 id="card2-title" class="text-2xl font-bold text-slate-950 mb-3">اللغة العربية والبيان</h3>
+                <p id="card2-desc" class="text-slate-600 mb-6 leading-relaxed">تعليم النحو، الصرف، والبلاغة للأقحاح والناطقين بغيرها، لتعزيز فصاحة اللسان وفهم معاني الخطاب العربي الفصيح.</p>
             </div>
 
             <!-- مسار اللغة الإنجليزية (ثانوي) -->
             <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-md hover:shadow-lg transition">
                 <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">🌐</div>
-                <h3 class="text-2xl font-bold text-slate-950 mb-3">اللغة الإنجليزية للتعلم والعمل</h3>
-                <p class="text-slate-600 mb-6 leading-relaxed">تطوير مهارات المحادثة والاستماع والقراءة باللغة الإنجليزية لفتح آفاق تواصل عالمية ونقل المعارف الإسلامية للخارج.</p>
-                <ul class="text-sm text-slate-600 space-y-2 mb-6">
-                    <li class="flex items-center">🔹 التركيز على النطق الصحيح (Phonics)</li>
-                    <li class="flex items-center">🔹 مستويات متدرجة لجميع الأعمار</li>
-                </ul>
+                <h3 id="card3-title" class="text-2xl font-bold text-slate-950 mb-3">اللغة الإنجليزية</h3>
+                <p id="card3-desc" class="text-slate-600 mb-6 leading-relaxed">تطوير مهارات المحادثة والاستماع والقراءة باللغة الإنجليزية لفتح آفاق تواصل عالمية ونقل المعارف الإسلامية للخارج.</p>
             </div>
         </div>
     </section>
 
-    <!-- قسم المميزات (Features) -->
-    <section id="features" class="bg-slate-100 py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-950 mb-4">ما يميز أكاديمية إتقان البيان</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">نجمع بين جودة المادة التعليمية ومرونة التقنية الحديثة لضمان أفضل تجربة استيعاب.</p>
+    <!-- قسم الأسئلة الشائعة (FAQ) -->
+    <section id="faq" class="bg-slate-100 py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 id="faq-title" class="text-3xl font-bold text-slate-950 mb-4">الأسئلة الشائعة</h2>
+                <p id="faq-subtitle" class="text-slate-600">كل ما تود معرفته عن نظام الدراسة، المواعيد، والأسعار.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-4">👨‍🏫</div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">كادر تعليمي متميز</h4>
-                    <p class="text-sm text-slate-600">نخبة من المعلمين والمعلمات المجازين في القراءات العشر.</p>
+            <div class="space-y-4">
+                <!-- سؤال 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition">
+                        <span id="q1" class="font-semibold text-slate-900 text-lg">ما هي المواعيد المتاحة للحلقات والمحاضرات؟</span>
+                        <span class="faq-icon transition-transform duration-300 text-emerald-600 font-bold">▼</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6 text-slate-600 leading-relaxed">
+                        <p id="a1">نحن نوفر مرونة كاملة على مدار 24 ساعة؛ حيث يمكنك التنسيق مباشرة مع المعلم لجدولة المواعيد التي تناسب أوقات فراغك أو عملك، سواء كنت داخل الوطن العربي أو خارجه.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-4">💻</div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">فصول افتراضية مرنة</h4>
-                    <p class="text-sm text-slate-600">دراسة عن بُعد عبر أحدث برامج الاتصال المباشر وبأوقات مرنة.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">متابعة وتقييم دوري</h4>
-                    <p class="text-sm text-slate-600">تقارير دورية تقيس تطور مستوى الطالب وتقدمه المستمر.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
-                    <div class="text-4xl mb-4">📜</div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">شهادات معتمدة</h4>
-                    <p class="text-sm text-slate-600">منح شهادات اجتياز وإجازات قرآنية معتمدة عند إنهاء المسارات.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- تذييل الصفحة (Footer) -->
+                <!-- سؤال 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition">
+                        <span id="q2" class="font-semibold text-slate-900 text-lg">ما هي تكلفة ورسوم الدراسة بالأكاديمية؟</span>
+                        <span class="faq-icon transition-transform duration-300 text-emerald-600 font-bold">▼</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6 text-slate-600 leading-relaxed">
+                        <p id="a2">تختلف الرسوم بناءً على المسار التعليمي المختار وعدد الحصص الأسبوعية الفردية أو الجماعية. نقدم خطط أسعار تنافسية تبدأ من باقات شهرية ميسرة، مع تقديم حصة تجريبية مجانية تماماً.</p>
+                    </div>
+                </div>
+
+                <!-- سؤال 3 -->
