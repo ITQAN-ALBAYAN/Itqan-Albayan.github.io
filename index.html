@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية إتقان البيان | لتعليم التجويد واللغات</title>
+    <!-- تضمين مكتبة Tailwind CSS للتصميم الحديث -->
+    <script src="https://tailwindcss.com"></script>
+    <!-- تضمين خطوط جوجل لجمالية النص العربي -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- شريط التنقل العلوي (Navbar) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- الشعار واسم الأكاديمية -->
+                <div class="flex items-center space-x-reverse space-x-3">
+                    <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
+                        إب
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-slate-900 block leading-tight">إتقان البيان</span>
+                        <span class="text-xs text-emerald-600 font-semibold">لعلوم القرآن واللغات</span>
+                    </div>
+                </div>
+                
+                <!-- الروابط الرئيسية -->
+                <div class="hidden md:flex space-x-reverse space-x-8 font-medium">
+                    <a href="#hero" class="text-emerald-600 hover:text-emerald-700 transition">الرئيسية</a>
+                    <a href="#programs" class="text-slate-600 hover:text-emerald-600 transition">برامجنا التعليمية</a>
+                    <a href="#features" class="text-slate-600 hover:text-emerald-600 transition">لماذا نحن؟</a>
+                    <a href="#contact" class="text-slate-600 hover:text-emerald-600 transition">اتصل بنا</a>
+                </div>
+
+                <!-- تغيير اللغة وزر التسجيل -->
+                <div class="flex items-center space-x-reverse space-x-4">
+                    <button class="text-sm font-semibold text-slate-500 hover:text-emerald-600 transition">English</button>
+                    <a href="#contact" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition transform hover:-translate-y-0.5">
+                        سجل معنا الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي (Hero Section) -->
+    <section id="hero" class="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
+        <!-- خلفية جمالية خفيفة -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-emerald-500/30">
+                مرحباً بكم في أكاديمية إتقان البيان
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                رتّل القرآن <span class="text-emerald-400">بإتقان</span>، وانطلق في عالم <span class="text-emerald-400">البيان</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                منصة أكاديمية متخصصة في تعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى تمكين وتطوير مهارات اللغتين العربية والإنجليزية.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#programs" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-3.5 rounded-xl shadow-lg transition">
+                    استكشف المسارات التعليمية
+                </a>
+                <a href="#features" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 text-lg font-semibold px-8 py-3.5 rounded-xl border border-slate-700 transition">
+                    اكتشف مميزات الأكاديمية
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم البرامج التعليمية (Programs Section) -->
+    <section id="programs" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-950 mb-4">برامجنا ومساراتنا التعليمية</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">نقدم مناهج دراسية متكاملة مصممة لتناسب مختلف المستويات والأعمار تحت إشراف نخبة من المتخصصين.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- مسار التجويد (رئيسي) -->
+            <div class="bg-white border-2 border-emerald-500 rounded-2xl p-8 shadow-xl relative transform md:-translate-y-4">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                    المسار الرئيسي
+                </div>
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6">📖</div>
+                <h3 class="text-2xl font-bold text-slate-950 mb-3">علوم القرآن والتجويد</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">تصحيح التلاوة، شرح متون التجويد (التحفة والجزرية)، ومخارج الحروف بدقة، مع إمكانية الحصول على الإجازة بالسند المتصل.</p>
+                <ul class="text-sm text-slate-600 space-y-2 mb-6">
+                    <li class="flex items-center">✨ دراسة نظرية وتطبيقية مكثفة</li>
+                    <li class="flex items-center">✨ معلمين ومقرئين مجازين</li>
+                </ul>
+            </div>
+
+            <!-- مسار اللغة العربية (ثانوي) -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-md hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6">🕌</div>
+                <h3 class="text-2xl font-bold text-slate-950 mb-3">اللغة العربية والبيان</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">تعليم النحو، الصرف، والبلاغة للأقحاح والناطقين بغيرها، لتعزيز فصاحة اللسان وفهم معاني الخطاب العربي الفصيح.</p>
+                <ul class="text-sm text-slate-600 space-y-2 mb-6">
+                    <li class="flex items-center">🔹 تحسين مهارات التحدث والكتابة</li>
+                    <li class="flex items-center">🔹 مناهج مبسطة وعصرية</li>
+                </ul>
+            </div>
+
+            <!-- مسار اللغة الإنجليزية (ثانوي) -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-md hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">🌐</div>
+                <h3 class="text-2xl font-bold text-slate-950 mb-3">اللغة الإنجليزية للتعلم والعمل</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">تطوير مهارات المحادثة والاستماع والقراءة باللغة الإنجليزية لفتح آفاق تواصل عالمية ونقل المعارف الإسلامية للخارج.</p>
+                <ul class="text-sm text-slate-600 space-y-2 mb-6">
+                    <li class="flex items-center">🔹 التركيز على النطق الصحيح (Phonics)</li>
+                    <li class="flex items-center">🔹 مستويات متدرجة لجميع الأعمار</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المميزات (Features) -->
+    <section id="features" class="bg-slate-100 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-950 mb-4">ما يميز أكاديمية إتقان البيان</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">نجمع بين جودة المادة التعليمية ومرونة التقنية الحديثة لضمان أفضل تجربة استيعاب.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-4xl mb-4">👨‍🏫</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">كادر تعليمي متميز</h4>
+                    <p class="text-sm text-slate-600">نخبة من المعلمين والمعلمات المجازين في القراءات العشر.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">فصول افتراضية مرنة</h4>
+                    <p class="text-sm text-slate-600">دراسة عن بُعد عبر أحدث برامج الاتصال المباشر وبأوقات مرنة.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">متابعة وتقييم دوري</h4>
+                    <p class="text-sm text-slate-600">تقارير دورية تقيس تطور مستوى الطالب وتقدمه المستمر.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                    <div class="text-4xl mb-4">📜</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">شهادات معتمدة</h4>
+                    <p class="text-sm text-slate-600">منح شهادات اجتياز وإجازات قرآنية معتمدة عند إنهاء المسارات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة (Footer) -->
