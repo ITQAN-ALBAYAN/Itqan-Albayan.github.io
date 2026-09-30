@@ -1,0 +1,134 @@
+/* =====================================================
+   أكاديمية إتقان البيان — ملف التنسيقات الرئيسي
+   ===================================================== */
+
+:root {
+    --brand-emerald: #059669;
+    --brand-emerald-dark: #047857;
+    --brand-ink: #020617;
+}
+
+/* الخطوط حسب اللغة */
+:lang(ar) { font-family: 'Cairo', sans-serif; }
+:lang(en) { font-family: 'Inter', sans-serif; }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    transition: background-color .3s ease;
+}
+
+/* إبراز الوصول للوحة المفاتيح دون كسر التصميم */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--brand-emerald);
+    outline-offset: 2px;
+}
+
+/* ===================== شريط التنقل ===================== */
+.nav-link.active {
+    color: var(--brand-emerald) !important;
+    font-weight: 700;
+}
+
+#mobile-menu {
+    animation: fadeSlideDown .2s ease-out;
+}
+
+/* ===================== الأسئلة الشائعة (أكورديون) ===================== */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-out;
+}
+
+.faq-item.faq-active .faq-answer {
+    max-height: 300px;
+}
+
+.faq-item.faq-active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-icon {
+    transition: transform .25s ease;
+}
+
+/* ===================== أداة اختبار التجويد ===================== */
+.quiz-option {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: .9rem 1.1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: .75rem;
+    margin-bottom: .65rem;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .15s ease, background-color .15s ease, transform .1s ease;
+}
+
+.quiz-option:hover {
+    border-color: var(--brand-emerald);
+    background: #ecfdf5;
+}
+
+.quiz-option:active {
+    transform: scale(.99);
+}
+
+.quiz-option.correct {
+    border-color: var(--brand-emerald);
+    background: #d1fae5;
+}
+
+.quiz-option.incorrect {
+    border-color: #ef4444;
+    background: #fee2e2;
+}
+
+.quiz-option:disabled,
+.quiz-option[aria-disabled="true"] {
+    cursor: default;
+}
+
+/* ===================== الأزرار وبطاقات البرامج ===================== */
+.prog-link span[aria-hidden="true"] {
+    transition: transform .15s ease;
+}
+
+/* ===================== زر العودة للأعلى ===================== */
+#scroll-top-btn {
+    display: none;
+}
+
+#scroll-top-btn.visible {
+    display: flex;
+    animation: fadeSlideUp .2s ease-out;
+}
+
+/* ===================== حركات بسيطة ===================== */
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* احترام تفضيل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* ===================== حالة الطباعة ===================== */
+@media print {
+    nav, #scroll-top-btn, #register form { display: none; }
+}

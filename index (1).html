@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-tag">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="google-site-verification" content="1-IMuvCVS-ypfKdIuUz4T57hmEgNd0ILNT3v6Ql9Ty8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 2. تحسينات الـ SEO والكلمات المفتاحية (SEO Optimization) -->
+    <title>أكاديمية إتقان البيان | للتجويد </title>
+    <meta name="description" content="أكاديمية إتقان البيان لتعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى دورات تمكين مهارات اللغتين العربية والإنجليزية تحت إشراف معلمين مجازين.">
+    <meta name="keywords" content="أكاديمية تجويد, تعليم التجويد عن بعد, إتقان البيان, إجازة قرآنية, مخارج الحروف, دورات لغة عربية, تعلم التجويد, قران كريم بسند, Learn Tajweed online, Arabic academy">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.itqan-albayan.academy/">
+
+    <!-- وسم الأرشفة لمنصات التواصل الاجتماعي (Open Graph) -->
+    <meta property="og:title" content="أكاديمية إتقان البيان | للتجويد واللغات">
+    <meta property="og:description" content="رتّل القرآن بإتقان وانطلق في عالم البيان. دورات تجويد مكثفة وإجازات مسندة ولغات لجميع الأعمار.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23059669'/%3E%3Ctext x='50' y='66' font-size='42' text-anchor='middle' fill='white' font-family='sans-serif'%3Eإب%3C/text%3E%3C/svg%3E">
+
+    <!-- تضمين مكتبة Tailwind CSS للتصميم الحديث -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تضمين خطوط جوجل لجمالية النص العربي والإنجليزي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ملف التنسيقات الخاص بالموقع -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- شريط التنقل العلوي (Navbar) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- الشعار واسم الأكاديمية -->
+                <div class="flex items-center space-x-reverse space-x-3">
+                    <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
+                        إب
+                    </div>
+                    <div>
+                        <span id="nav-title" class="text-xl font-bold text-slate-900 block leading-tight">إتقان البيان</span>
+                        <span id="nav-subtitle" class="text-xs text-emerald-600 font-semibold">لعلوم القرآن واللغات</span>
+                    </div>
+                </div>
+
+                <!-- الروابط الرئيسية -->
+                <div class="hidden md:flex space-x-reverse space-x-8 font-medium" id="nav-links">
+                    <a href="#hero" id="link-home" class="nav-link text-emerald-600 hover:text-emerald-700 transition">الرئيسية</a>
+                    <a href="#programs" id="link-programs" class="nav-link text-slate-600 hover:text-emerald-600 transition">برامجنا</a>
+                    <a href="#quiz-section" id="link-quiz" class="nav-link text-slate-600 hover:text-emerald-600 transition">اختبر تجويدك</a>
+                    <a href="#faq" id="link-faq" class="nav-link text-slate-600 hover:text-emerald-600 transition">الأسئلة الشائعة</a>
+                    <a href="#register" id="link-reg" class="nav-link text-slate-600 hover:text-emerald-600 transition">التسجيل</a>
+                </div>
+
+                <!-- زر تغيير اللغة وزر التسجيل -->
+                <div class="flex items-center space-x-reverse space-x-4">
+                    <button onclick="toggleLanguage()" id="lang-btn" class="text-sm font-bold bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-600 px-3 py-1.5 rounded-lg border border-slate-200 transition">
+                        English
+                    </button>
+                    <a href="#register" id="nav-register-btn" class="hidden sm:inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition transform hover:-translate-y-0.5">
+                        سجل معنا الآن
+                    </a>
+                    <!-- زر القائمة للجوال -->
+                    <button onclick="toggleMobileMenu()" id="mobile-menu-btn" aria-label="فتح القائمة" aria-expanded="false" class="md:hidden text-slate-700 p-2 rounded-lg hover:bg-slate-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- قائمة الجوال -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 flex flex-col gap-1 font-medium">
+                <a href="#hero" onclick="toggleMobileMenu()" class="nav-link py-2 px-2 rounded-lg text-slate-700 hover:bg-emerald-50">الرئيسية</a>
+                <a href="#programs" onclick="toggleMobileMenu()" class="nav-link py-2 px-2 rounded-lg text-slate-700 hover:bg-emerald-50">برامجنا</a>
+                <a href="#quiz-section" onclick="toggleMobileMenu()" class="nav-link py-2 px-2 rounded-lg text-slate-700 hover:bg-emerald-50">اختبر تجويدك</a>
+                <a href="#faq" onclick="toggleMobileMenu()" class="nav-link py-2 px-2 rounded-lg text-slate-700 hover:bg-emerald-50">الأسئلة الشائعة</a>
+                <a href="#register" onclick="toggleMobileMenu()" class="nav-link py-2 px-2 rounded-lg bg-emerald-600 text-white text-center mt-2">التسجيل</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي (Hero Section) -->
+    <section id="hero" class="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span id="hero-tag" class="inline-block bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-emerald-500/30">
+                مرحباً بكم في أكاديمية إتقان البيان
+            </span>
+            <h1 id="hero-title" class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                رتّل القرآن <span class="text-emerald-400">بإتقان</span>، وانطلق في عالم <span class="text-emerald-400">البيان</span>
+            </h1>
+            <p id="hero-desc" class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                منصة أكاديمية متخصصة في تعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى تمكين وتطوير مهارات اللغتين العربية والإنجليزية.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#register" id="hero-btn-1" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-3.5 rounded-xl shadow-lg transition">
+                    ابدأ رحلتك التعليمية الآن
+                </a>
+                <a href="#quiz-section" id="hero-btn-2" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 text-lg font-semibold px-8 py-3.5 rounded-xl border border-slate-700 transition">
+                    حدد مستواك في التجويد ثوانٍ
+                </a>
+            </div>
+
+            <!-- إحصائيات سريعة -->
+            <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto mt-16 pt-10 border-t border-slate-800">
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-emerald-400">+2500</div>
+                    <div id="stat-1" class="text-sm text-slate-400 mt-1">طالب وطالبة</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-emerald-400">+40</div>
+                    <div id="stat-2" class="text-sm text-slate-400 mt-1">معلم مجاز</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-emerald-400">4.9</div>
+                    <div id="stat-3" class="text-sm text-slate-400 mt-1">تقييم الطلاب</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم البرامج التعليمية (Programs Section) -->
+    <section id="programs" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 id="prog-title" class="text-3xl md:text-4xl font-bold text-slate-950 mb-4">برامجنا ومساراتنا التعليمية</h2>
+            <p id="prog-desc" class="text-slate-600 max-w-2xl mx-auto">نقدم مناهج دراسية متكاملة مصممة لتناسب مختلف المستويات والأعمار تحت إشراف نخبة من المتخصصين.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- مسار التجويد (رئيسي) -->
+            <div class="bg-white border-2 border-emerald-500 rounded-2xl p-8 shadow-xl relative transform md:-translate-y-4">
+                <div id="badge-main" class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                    المسار الرئيسي
+                </div>
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6">📖</div>
+                <h3 id="card1-title" class="text-2xl font-bold text-slate-950 mb-3">علوم القرآن والتجويد</h3>
+                <p id="card1-desc" class="text-slate-600 mb-6 leading-relaxed">تصحيح التلاوة، وشرح مخارج الحروف وأحكام التجويد بدقة، مع الحصول على الإجازة بالسند المتصل.</p>
+                <a href="#register" class="prog-link inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all">
+                    <span id="card1-cta">سجّل في هذا المسار</span>
+                    <span aria-hidden="true">◀</span>
+                </a>
+            </div>
+
+            <!-- مسار اللغة العربية (ثانوي) -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-md hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6">🕌</div>
+                <h3 id="card2-title" class="text-2xl font-bold text-slate-950 mb-3">اللغة العربية والبيان</h3>
+                <p id="card2-desc" class="text-slate-600 mb-6 leading-relaxed">تعليم النحو، الصرف، والبلاغة للأقحاح والناطقين بغيرها، لتعزيز فصاحة اللسان وفهم معاني الخطاب العربي الفصيح.</p>
+                <a href="#register" class="prog-link inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all">
+                    <span id="card2-cta">سجّل في هذا المسار</span>
+                    <span aria-hidden="true">◀</span>
+                </a>
+            </div>
+
+            <!-- مسار اللغة الإنجليزية (ثانوي) -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-md hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">🌐</div>
+                <h3 id="card3-title" class="text-2xl font-bold text-slate-950 mb-3">اللغة الإنجليزية</h3>
+                <p id="card3-desc" class="text-slate-600 mb-6 leading-relaxed">تطوير مهارات المحادثة والاستماع والقراءة باللغة الإنجليزية لفتح آفاق تواصل عالمية ونقل المعارف الإسلامية للخارج.</p>
+                <a href="#register" class="prog-link inline-flex items-center gap-2 text-amber-600 font-semibold hover:gap-3 transition-all">
+                    <span id="card3-cta">سجّل في هذا المسار</span>
+                    <span aria-hidden="true">◀</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. أداة اختبار التجويد التفاعلية (Quiz Section) -->
+    <section id="quiz-section" class="py-16 bg-emerald-50/50 border-y border-emerald-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 id="quiz-sec-title" class="text-3xl font-bold text-slate-950 mb-3">أداة تحديد المستوى السريع</h2>
+            <p id="quiz-sec-desc" class="text-slate-600 mb-8 max-w-xl mx-auto">اختبر معلوماتك التجويدية الأساسية في دقيقة واحدة واكتشف ما تحتاجه للوصول إلى مرتبة المهرة بالقرآن.</p>
+
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-slate-100 text-right">
+                <div id="interactive-quiz-container">
+                    <!-- شاشة الأسئلة -->
+                    <div id="quiz-questions">
+                        <div class="flex justify-between items-center mb-6">
+                            <span id="quiz-progress-text" class="text-sm font-semibold text-emerald-600">السؤال <span id="quiz-current">1</span> من <span id="quiz-total">5</span></span>
+                            <div class="w-1/2 h-2 bg-slate-100 rounded-full overflow-hidden">
+                                <div id="quiz-progress-bar" class="h-full bg-emerald-500 transition-all duration-300" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        <div id="quiz-question-box"></div>
+                    </div>
+
+                    <!-- شاشة النتيجة -->
+                    <div id="quiz-result" class="hidden text-center py-4">
+                        <div class="text-5xl mb-4" id="quiz-result-emoji">🎓</div>
+                        <h3 id="quiz-result-title" class="text-2xl font-bold text-slate-950 mb-2">نتيجتك</h3>
+                        <p id="quiz-result-desc" class="text-slate-600 mb-6 max-w-md mx-auto"></p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-3">
+                            <button onclick="restartQuiz()" id="quiz-restart-btn" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-6 py-3 rounded-xl transition">إعادة الاختبار</button>
+                            <a href="#register" id="quiz-register-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-xl transition">سجّل الآن وابدأ التعلم</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة (FAQ) -->
+    <section id="faq" class="bg-slate-100 py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 id="faq-title" class="text-3xl md:text-4xl font-bold text-slate-950 mb-4">الأسئلة الشائعة</h2>
+                <p id="faq-desc" class="text-slate-600">كل ما تحتاج معرفته قبل الانضمام إلى الأكاديمية</p>
+            </div>
+
+            <div class="space-y-4" id="faq-list">
+
+                <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200">
+                    <button class="faq-question w-full flex justify-between items-center text-right p-5 font-semibold text-slate-900" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">هل الدورات مناسبة للمبتدئين تماماً؟</span>
+                        <svg class="faq-icon w-5 h-5 text-emerald-600 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="faq-a-text text-slate-600 pb-5 leading-relaxed">نعم، نستقبل الطلاب من مستوى الصفر تماماً، حيث يبدأ المعلم بتقييم مبدئي ثم يضع خطة تناسب مستواك بدءاً من قراءة الحروف وحتى الإجازة.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200">
+                    <button class="faq-question w-full flex justify-between items-center text-right p-5 font-semibold text-slate-900" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">كيف تتم الدروس، وهل هي فردية أم جماعية؟</span>
+                        <svg class="faq-icon w-5 h-5 text-emerald-600 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="faq-a-text text-slate-600 pb-5 leading-relaxed">تُعقد الدروس عبر الإنترنت بشكل مباشر (لايف)، ويمكنك الاختيار بين حصص فردية خاصة أو مجموعات صغيرة، بما يناسب وقتك وميزانيتك.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200">
+                    <button class="faq-question w-full flex justify-between items-center text-right p-5 font-semibold text-slate-900" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">هل أحصل على إجازة بسند متصل بعد إتمام البرنامج؟</span>
+                        <svg class="faq-icon w-5 h-5 text-emerald-600 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="faq-a-text text-slate-600 pb-5 leading-relaxed">نعم، عند إتمام المسار المحدد للإجازة بنجاح تحت إشراف معلم مجاز، يُمنح الطالب إجازة قرآنية موثقة بسند متصل.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200">
+                    <button class="faq-question w-full flex justify-between items-center text-right p-5 font-semibold text-slate-900" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">هل الدورات متاحة لجميع الأعمار؟</span>
+                        <svg class="faq-icon w-5 h-5 text-emerald-600 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="faq-a-text text-slate-600 pb-5 leading-relaxed">نعم، لدينا مسارات مخصصة للأطفال والناشئين وأخرى للبالغين، ويُراعى في كل مسار الأسلوب التعليمي المناسب للفئة العمرية.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200">
+                    <button class="faq-question w-full flex justify-between items-center text-right p-5 font-semibold text-slate-900" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">ما وسائل الدفع المتاحة للاشتراك؟</span>
+                        <svg class="faq-icon w-5 h-5 text-emerald-600 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="faq-answer px-5">
+                        <p class="faq-a-text text-slate-600 pb-5 leading-relaxed">يمكنك الدفع عبر التحويل البنكي، أو المحافظ الإلكترونية، أو البطاقات الائتمانية، وسيتواصل معك فريقنا لتفاصيل الدفع بعد التسجيل.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التسجيل (Register Section) -->
+    <section id="register" class="py-20 bg-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10">
+                <h2 id="reg-title" class="text-3xl md:text-4xl font-bold text-white mb-4">ابدأ رحلتك اليوم</h2>
+                <p id="reg-desc" class="text-slate-300 max-w-xl mx-auto">املأ بياناتك وسيتواصل معك فريقنا التعليمي خلال 24 ساعة لتحديد موعد حصتك التجريبية المجانية.</p>
+            </div>
+
+            <form id="register-form" class="bg-white rounded-2xl shadow-xl p-6 md:p-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="sm:col-span-1">
+                    <label for="reg-name" id="label-name" class="block text-sm font-semibold text-slate-700 mb-2">الاسم الكامل</label>
+                    <input required type="text" id="reg-name" name="name" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="مثال: محمد أحمد">
+                </div>
+                <div class="sm:col-span-1">
+                    <label for="reg-phone" id="label-phone" class="block text-sm font-semibold text-slate-700 mb-2">رقم الجوال / واتساب</label>
+                    <input required type="tel" id="reg-phone" name="phone" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="+962 7X XXX XXXX">
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="reg-email" id="label-email" class="block text-sm font-semibold text-slate-700 mb-2">البريد الإلكتروني</label>
+                    <input required type="email" id="reg-email" name="email" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="example@email.com">
+                </div>
+                <div class="sm:col-span-1">
+                    <label for="reg-track" id="label-track" class="block text-sm font-semibold text-slate-700 mb-2">المسار المطلوب</label>
+                    <select id="reg-track" name="track" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                        <option value="tajweed">علوم القرآن والتجويد</option>
+                        <option value="arabic">اللغة العربية والبيان</option>
+                        <option value="english">اللغة الإنجليزية</option>
+                    </select>
+                </div>
+                <div class="sm:col-span-1">
+                    <label for="reg-age" id="label-age" class="block text-sm font-semibold text-slate-700 mb-2">الفئة العمرية</label>
+                    <select id="reg-age" name="age" class="w-full border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                        <option value="child">أطفال (أقل من 12)</option>
+                        <option value="teen">ناشئة (12 - 17)</option>
+                        <option value="adult">بالغون (18+)</option>
+                    </select>
+                </div>
+                <div class="sm:col-span-2">
+                    <button type="submit" id="reg-submit-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-lg font-semibold px-8 py-4 rounded-xl shadow-lg transition">
+                        إرسال طلب التسجيل
+                    </button>
+                    <p id="reg-privacy-note" class="text-xs text-slate-500 text-center mt-3">بياناتك محفوظة لدينا ولن يتم مشاركتها مع أي طرف ثالث.</p>
+                </div>
+            </form>
+
+            <!-- رسالة نجاح الإرسال -->
+            <div id="reg-success" class="hidden bg-white rounded-2xl shadow-xl p-10 text-center">
+                <div class="text-5xl mb-4">✅</div>
+                <h3 id="reg-success-title" class="text-2xl font-bold text-slate-950 mb-2">تم استلام طلبك بنجاح</h3>
+                <p id="reg-success-desc" class="text-slate-600">سيتواصل معك فريقنا التعليمي قريباً عبر الجوال أو البريد الإلكتروني المسجّل.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل (Footer) -->
+    <footer class="bg-slate-950 text-slate-400 py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-reverse space-x-3 mb-4">
+                    <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold">إب</div>
+                    <span class="text-lg font-bold text-white">إتقان البيان</span>
+                </div>
+                <p id="footer-about" class="max-w-sm leading-relaxed text-sm">أكاديمية تعليمية متخصصة في تجويد القرآن الكريم ومخارج الحروف وعلوم اللغتين العربية والإنجليزية، تحت إشراف نخبة من المعلمين المجازين.</p>
+            </div>
+            <div>
+                <h4 id="footer-links-title" class="text-white font-semibold mb-4">روابط سريعة</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#programs" class="hover:text-emerald-400 transition">برامجنا</a></li>
+                    <li><a href="#quiz-section" class="hover:text-emerald-400 transition">اختبر تجويدك</a></li>
+                    <li><a href="#faq" class="hover:text-emerald-400 transition">الأسئلة الشائعة</a></li>
+                    <li><a href="#register" class="hover:text-emerald-400 transition">التسجيل</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 id="footer-contact-title" class="text-white font-semibold mb-4">تواصل معنا</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>📧 info@itqan-albayan.academy</li>
+                    <li>📱 +962 79 000 0000</li>
+                    <li id="footer-hours">🕐 يومياً من 9 صباحاً حتى 10 مساءً</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-slate-800 text-xs text-center">
+            <span id="footer-copyright">© <span id="footer-year">2026</span> أكاديمية إتقان البيان. جميع الحقوق محفوظة.</span>
+        </div>
+    </footer>
+
+    <!-- زر العودة للأعلى -->
+    <button id="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى" class="hidden fixed bottom-6 left-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-11 h-11 rounded-full shadow-lg items-center justify-center transition">
+        ↑
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
