@@ -1,0 +1,190 @@
+/* =====================================================
+   أكاديمية إتقان البيان — ملف التنسيقات الرئيسي
+   ===================================================== */
+
+:root {
+    --brand-emerald: #059669;
+    --brand-emerald-dark: #047857;
+    --danger: #dc2626;
+}
+
+/* الخطوط حسب اللغة */
+:lang(ar) { font-family: 'Cairo', sans-serif; }
+:lang(en), :lang(de) { font-family: 'Inter', sans-serif; }
+
+html { scroll-behavior: smooth; }
+
+/* يمنع اختفاء عناوين الأقسام خلف الشريط العلوي الثابت */
+section[id] { scroll-margin-top: 5rem; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--brand-emerald);
+    outline-offset: 2px;
+}
+
+/* ===================== الشعار (Logo slot) ===================== */
+.logo-slot {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    min-width: 3rem;
+    flex-shrink: 0;
+}
+
+.logo-slot-sm { height: 2.5rem; min-width: 2.5rem; }
+
+/* الحرفان الاحتياطيان (يظهران حتى يُضاف ملف الشعار) */
+.logo-fallback {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--brand-emerald);
+    color: #fff;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+
+.logo-img { display: none; height: 100%; width: auto; max-width: 10rem; object-fit: contain; }
+
+/* عند نجاح تحميل صورة الشعار */
+.logo-slot.has-logo .logo-img { display: block; }
+.logo-slot.has-logo .logo-fallback { display: none; }
+
+/* ===================== التنقل ===================== */
+.nav-link.active { color: var(--brand-emerald) !important; font-weight: 700; }
+
+#mobile-menu { animation: fadeSlideDown .2s ease-out; }
+
+/* مبدّل اللغة */
+.lang-switch {
+    display: inline-flex;
+    border: 1px solid #e2e8f0;
+    border-radius: .6rem;
+    overflow: hidden;
+    background: #f1f5f9;
+    direction: ltr;
+}
+
+.lang-btn {
+    padding: .4rem .65rem;
+    font-size: .75rem;
+    font-weight: 700;
+    color: #475569;
+    transition: background-color .15s ease, color .15s ease;
+}
+
+.lang-btn:hover { background: #ecfdf5; color: var(--brand-emerald); }
+.lang-btn.active { background: var(--brand-emerald); color: #fff; }
+
+/* ===================== من نحن ===================== */
+.about-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.about-card:hover { box-shadow: 0 10px 25px -10px rgba(15,23,42,.15); transform: translateY(-2px); }
+
+.about-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+/* ===================== البطاقات والأسهم ===================== */
+.arrow { display: inline-block; transition: transform .15s ease; }
+[dir="ltr"] .arrow { transform: scaleX(-1); }
+
+/* ===================== الأسئلة الشائعة ===================== */
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s ease-out; }
+.faq-item.faq-active .faq-answer { max-height: 300px; }
+.faq-icon { transition: transform .25s ease; }
+.faq-item.faq-active .faq-icon { transform: rotate(180deg); }
+
+/* ===================== الاختبار ===================== */
+.quiz-option {
+    display: block;
+    width: 100%;
+    text-align: start;
+    padding: .9rem 1.1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: .75rem;
+    margin-bottom: .65rem;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .15s ease, background-color .15s ease, transform .1s ease;
+}
+
+.quiz-option:hover:not(:disabled) { border-color: var(--brand-emerald); background: #ecfdf5; }
+.quiz-option:active:not(:disabled) { transform: scale(.99); }
+.quiz-option.correct { border-color: var(--brand-emerald); background: #d1fae5; }
+.quiz-option.incorrect { border-color: #ef4444; background: #fee2e2; }
+.quiz-option:disabled { cursor: default; }
+
+/* ===================== نموذج التسجيل ===================== */
+.form-input {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: .5rem;
+    padding: .75rem 1rem;
+    background: #fff;
+    color: #0f172a;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--brand-emerald);
+    box-shadow: 0 0 0 3px rgba(16,185,129,.25);
+}
+
+.form-input.input-invalid { border-color: var(--danger); background: #fef2f2; }
+.form-input.input-invalid:focus { box-shadow: 0 0 0 3px rgba(220,38,38,.2); }
+
+/* قائمة رمز البلد: عرض ثابت حتى لا تضغط حقل الرقم */
+.phone-country { width: 11rem; flex-shrink: 0; }
+
+@media (max-width: 420px) {
+    .phone-country { width: 8.5rem; padding-inline: .5rem; }
+}
+
+.field-error { color: var(--danger); font-size: .8rem; margin-top: .4rem; }
+.field-error[hidden] { display: none; }
+.form-error { background: #fef2f2; border: 1px solid #fecaca; border-radius: .5rem; padding: .6rem .9rem; font-size: .9rem; }
+
+/* حقل الفخ للروبوتات */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
+/* ===================== زر العودة للأعلى ===================== */
+#scroll-top-btn { display: none; }
+#scroll-top-btn.visible { display: flex; animation: fadeSlideUp .2s ease-out; }
+
+/* ===================== حركات ===================== */
+@keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeSlideUp   { from { opacity: 0; transform: translateY(8px); }  to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+@media print {
+    nav, #scroll-top-btn, #register form { display: none; }
+}
