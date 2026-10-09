@@ -2,12 +2,6 @@
    أكاديمية إتقان البيان — البرمجة التفاعلية
    ===================================================== */
 
-/* ╔═══════════════════════════════════════════════════╗
-   ║  ضع مفتاح Web3Forms (Access Key) هنا بين علامتي   ║
-   ║  الاقتباس بدل YOUR_ACCESS_KEY_HERE                ║
-   ╚═══════════════════════════════════════════════════╝ */
-const WEB3FORMS_ACCESS_KEY = 'c607f429-ad87-4a67-a4e4-868eb59eb7a0';
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 const LANGS = ['ar', 'en', 'de'];
 let currentLang = 'ar';
@@ -593,6 +587,9 @@ function showFormError(show) {
         delete el.dataset.i18n;
     }
 }
+
+const WEB3FORMS_ACCESS_KEY = 'c607f429-ad87-4a67-a4e4-868eb59eb7a0';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 function initRegisterForm() {
     const form = $('register-form');
