@@ -14,7 +14,7 @@ let currentLang = 'ar';
 
 /* ===================== الترجمات ===================== */
 const I18N = {
-    'meta.title': { ar: 'أكاديمية إتقان البيان | للتجويد', en: 'Itqan Al-Bayan Academy | Tajweed', de: 'Itqan Al-Bayan Akademie | Tadschwid' },
+    'meta.title': { ar: 'أكاديمية إتقان البيان', en: 'Itqan Al-Bayan Academy', de: 'Itqan Al-Bayan Akademie' },
     'meta.desc': {
         ar: 'أكاديمية إتقان البيان لتعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى دورات تمكين مهارات اللغتين العربية والإنجليزية تحت إشراف معلمين مجازين.',
         en: 'Itqan Al-Bayan Academy teaches tajweed rules and letter articulation through well-grounded scientific methods, plus Arabic and English language courses under certified teachers.',
@@ -35,9 +35,9 @@ const I18N = {
 
     'hero.tag':  { ar: 'مرحباً بكم في أكاديمية إتقان البيان', en: 'Welcome to Itqan Al-Bayan Academy', de: 'Willkommen an der Itqan Al-Bayan Akademie' },
     'hero.title': {
-        ar: 'رتّل القرآن <span class="text-emerald-400">بإتقان</span>، وانطلق في عالم <span class="text-emerald-400">البيان</span>',
-        en: 'Recite the Quran <span class="text-emerald-400">with mastery</span>, and step into the world of <span class="text-emerald-400">eloquence</span>',
-        de: 'Rezitiere den Koran <span class="text-emerald-400">mit Meisterschaft</span> und entdecke die Welt der <span class="text-emerald-400">Beredsamkeit</span>'
+        ar: 'أكاديمية <span class="text-emerald-400">إتقان البيان</span> تدبّر القرآن الكريم',
+        en: '<span class="text-emerald-400">Itqan Al-Bayan</span> Academy — Reflecting on the Holy Quran',
+        de: '<span class="text-emerald-400">Itqan Al-Bayan</span> Akademie – Tadabbur des Heiligen Korans'
     },
     'hero.desc': {
         ar: 'منصة أكاديمية متخصصة في تعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى تمكين وتطوير مهارات اللغتين العربية والإنجليزية.',
@@ -180,6 +180,18 @@ const I18N = {
     },
     'reg.track': { ar: 'المسار المطلوب', en: 'Preferred track', de: 'Gewünschter Pfad' },
     'reg.age':   { ar: 'الفئة العمرية', en: 'Age group', de: 'Altersgruppe' },
+    'reg.gender': { ar: 'الجنس', en: 'Gender', de: 'Geschlecht' },
+    'gender.choose': { ar: 'اختر', en: 'Select', de: 'Auswählen' },
+    'gender.male': { ar: 'ذكر', en: 'Male', de: 'Männlich' },
+    'gender.female': { ar: 'أنثى', en: 'Female', de: 'Weiblich' },
+    'err.gender': { ar: 'يرجى اختيار الجنس.', en: 'Please select a gender.', de: 'Bitte wähle das Geschlecht aus.' },
+    'reg.guardian': { ar: 'اسم الوالد / الولي', en: 'Parent / guardian name', de: 'Name der Eltern / Erziehungsberechtigten' },
+    'reg.guardian.ph': { ar: 'مثال: أحمد محمد', en: 'e.g. Ahmed Mohammed', de: 'z. B. Ahmed Mohammed' },
+    'reg.guardian.hint': {
+        ar: 'مطلوب للأطفال والناشئة (أقل من 18 سنة)، واختياري للبالغين',
+        en: 'Required for children and teens (under 18); optional for adults',
+        de: 'Erforderlich für Kinder und Jugendliche (unter 18), optional für Erwachsene'
+    },
     'track.tajweed': { ar: 'علوم القرآن والتجويد', en: 'Quranic Sciences & Tajweed', de: 'Koranwissenschaften & Tadschwid' },
     'track.arabic':  { ar: 'اللغة العربية والبيان', en: 'Arabic Language & Rhetoric', de: 'Arabische Sprache & Rhetorik' },
     'track.english': { ar: 'اللغة الإنجليزية', en: 'English Language', de: 'Englische Sprache' },
@@ -200,6 +212,11 @@ const I18N = {
         de: 'Unser Team meldet sich in Kürze per Telefon oder über die angegebene E-Mail-Adresse bei dir.'
     },
     'err.name':  { ar: 'يرجى إدخال اسمك الكامل.', en: 'Please enter your full name.', de: 'Bitte gib deinen vollständigen Namen ein.' },
+    'err.guardian': {
+        ar: 'يرجى إدخال اسم الوالد أو الولي.',
+        en: "Please enter the parent's or guardian's name.",
+        de: 'Bitte gib den Namen der Eltern bzw. Erziehungsberechtigten ein.'
+    },
     'err.email': {
         ar: 'يرجى إدخال بريد إلكتروني صحيح، مثل name@example.com',
         en: 'Please enter a valid email address, e.g. name@example.com',
@@ -214,6 +231,14 @@ const I18N = {
         ar: 'تعذّر إرسال الطلب. يرجى المحاولة لاحقاً أو التواصل معنا مباشرة.',
         en: 'We could not send your request. Please try again later or contact us directly.',
         de: 'Die Anfrage konnte nicht gesendet werden. Bitte versuche es später erneut oder kontaktiere uns direkt.'
+    },
+
+    'map.title': { ar: 'موقعنا', en: 'Our Location', de: 'Unser Standort' },
+    'map.desc': { ar: 'تعرّف على موقعنا على الخريطة', en: 'Find us on the map', de: 'Finde uns auf der Karte' },
+    'map.placeholder': {
+        ar: 'سيظهر موقع الأكاديمية على الخريطة هنا',
+        en: 'The academy location map will appear here',
+        de: 'Der Standort der Akademie wird hier auf der Karte angezeigt'
     },
 
     'footer.about': {
@@ -266,6 +291,7 @@ const COUNTRIES = [
 
 /* تسميات تصل إلى بريدك دائماً بالعربية بغض النظر عن لغة الزائر */
 const TRACK_LABELS_AR = { tajweed: 'علوم القرآن والتجويد', arabic: 'اللغة العربية والبيان', english: 'اللغة الإنجليزية' };
+const GENDER_LABELS_AR = { male: 'ذكر', female: 'أنثى' };
 const AGE_LABELS_AR = { child: 'أطفال (أقل من 12)', teen: 'ناشئة (12 - 17)', adult: 'بالغون (18+)' };
 
 function t(key, vars) {
@@ -285,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLogoSlots();
     initQuiz();
     initRegisterForm();
+    initMap();
     initLanguage();
 });
 
@@ -334,6 +361,18 @@ function initLogoSlots() {
     document.querySelectorAll('.logo-slot .logo-img').forEach(img => {
         if (img.complete && img.naturalWidth > 0) img.parentElement.classList.add('has-logo');
     });
+}
+
+/* ===================== خريطة جوجل ===================== */
+function initMap() {
+    const frame = $('map-frame');
+    const placeholder = $('map-placeholder');
+    if (!frame) return;
+    const src = (frame.dataset.src || '').trim();
+    if (!/^https:\/\//i.test(src)) return;   // لا رابط بعد: يبقى المكان الاحتياطي ظاهراً
+    frame.src = src;
+    frame.classList.remove('hidden');
+    if (placeholder) placeholder.classList.add('hidden');
 }
 
 /* ===================== الأسئلة الشائعة ===================== */
@@ -514,7 +553,10 @@ function isValidEmail(value) {
 const FIELD_RULES = {
     name:  { input: 'reg-name',  error: 'err-name',  key: 'err.name',  valid: v => v.trim().length >= 2 },
     email: { input: 'reg-email', error: 'err-email', key: 'err.email', valid: v => isValidEmail(v) },
-    phone: { input: 'reg-phone', error: 'err-phone', key: 'err.phone', valid: v => isValidPhone(v) }
+    phone: { input: 'reg-phone', error: 'err-phone', key: 'err.phone', valid: v => isValidPhone(v) },
+    // اسم الوالد/الولي: مطلوب للأطفال والناشئة، واختياري للبالغين
+    gender: { input: 'reg-gender', error: 'err-gender', key: 'err.gender', valid: v => v === 'male' || v === 'female' },
+    guardian: { input: 'reg-guardian', error: 'err-guardian', key: 'err.guardian', valid: v => $('reg-age').value === 'adult' || v.trim().length >= 2 }
 };
 
 function setFieldError(field, show) {
@@ -564,6 +606,11 @@ function initRegisterForm() {
         });
     });
 
+    // عند تغيير الفئة العمرية: أعد فحص حقل الوالد إن كان معلَّماً بالخطأ
+    $('reg-age').addEventListener('change', () => {
+        if ($('reg-guardian').getAttribute('aria-invalid') === 'true') validateField('guardian');
+    });
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         showFormError(false);
@@ -596,6 +643,8 @@ function initRegisterForm() {
             name: $('reg-name').value.trim(),
             email: $('reg-email').value.trim(),
             phone: code + localNumber,
+            guardian_name: $('reg-guardian').value.trim() || '-',
+            gender: GENDER_LABELS_AR[$('reg-gender').value],
             track: TRACK_LABELS_AR[$('reg-track').value],
             age_group: AGE_LABELS_AR[$('reg-age').value],
             site_language: currentLang
