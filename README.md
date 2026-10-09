@@ -1,1 +1,1 @@
-# ItqanAlbayanAcademy.github.io
+# ItqanAlbayan.github.io
