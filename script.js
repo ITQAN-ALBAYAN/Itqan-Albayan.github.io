@@ -2,6 +2,12 @@
    أكاديمية إتقان البيان — البرمجة التفاعلية
    ===================================================== */
 
+/* ╔═══════════════════════════════════════════════════╗
+   ║  ضع مفتاح Web3Forms (Access Key) هنا بين علامتي   ║
+   ║  الاقتباس بدل YOUR_ACCESS_KEY_HERE                ║
+   ╚═══════════════════════════════════════════════════╝ */
+const WEB3FORMS_ACCESS_KEY = 'c607f429-ad87-4a67-a4e4-868eb59eb7a0';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 const LANGS = ['ar', 'en', 'de'];
 let currentLang = 'ar';
@@ -240,6 +246,21 @@ const I18N = {
         en: 'An academy specialized in Quranic tajweed, letter articulation, and Arabic & English language sciences, under certified teachers.',
         de: 'Eine Akademie für Koran-Tadschwid, Artikulationsorte und die Sprachwissenschaften Arabisch und Englisch – unter Lehrkräften mit Idschaza.'
     },
+    'promo.badge': { ar: 'عرض خاص', en: 'Special Offer', de: 'Sonderangebot' },
+    'promo.title': { ar: 'الحصة الأولى مجانية', en: 'Your First Session Is Free', de: 'Die erste Stunde ist kostenlos' },
+    'promo.desc': {
+        ar: 'سجّل الآن واحصل على حصتك الأولى مجاناً لتتعرّف على أسلوب التدريس والمعلّم قبل أن تقرر الاشتراك.',
+        en: 'Register now and get your first session free, so you can experience our teaching style and teacher before you decide to enrol.',
+        de: 'Melde dich jetzt an und erhalte deine erste Stunde kostenlos, um Unterrichtsstil und Lehrkraft kennenzulernen, bevor du dich entscheidest.'
+    },
+    'promo.cta': { ar: 'احجز حصتك المجانية', en: 'Book Your Free Session', de: 'Kostenlose Stunde buchen' },
+    'reg.notes': { ar: 'ملاحظات (اختياري)', en: 'Notes (optional)', de: 'Anmerkungen (optional)' },
+    'reg.notes.ph': {
+        ar: 'أي ملاحظات تودّ إيصالها: الأوقات المناسبة للتواصل، مستوى الطالب الحالي…',
+        en: 'Anything you would like us to know: best times to reach you, current level…',
+        de: 'Alles, was wir wissen sollten: beste Erreichbarkeit, aktuelles Niveau …'
+    },
+    'map.open': { ar: 'فتح في خرائط جوجل', en: 'Open in Google Maps', de: 'In Google Maps öffnen' },
     'footer.links':   { ar: 'روابط سريعة', en: 'Quick Links', de: 'Schnellzugriff' },
     'footer.contact': { ar: 'تواصل معنا', en: 'Contact Us', de: 'Kontakt' },
     'footer.copy': {
@@ -358,15 +379,42 @@ function initLogoSlots() {
 }
 
 /* ===================== خريطة جوجل ===================== */
+// تقبل رابط التضمين مباشرة، أو كود <iframe> كاملاً (نستخرج منه قيمة src)
+function extractEmbedUrl(raw) {
+    const s = (raw || '').trim();
+    if (!s) return '';
+    const m = s.match(/src\s*=\s*["']([^"']+)["']/i);
+    const url = (m ? m[1] : s).replace(/&amp;/g, '&').trim();
+    const isEmbed = /^https:\/\/(www\.|maps\.)?google\.com\/maps\/embed/i.test(url)
+                 || /^https:\/\/(www\.|maps\.)?google\.com\/maps\?.*output=embed/i.test(url);
+    return isEmbed ? url : '';
+}
+
 function initMap() {
+    const box = $('map-box');
+    if (!box) return;
     const frame = $('map-frame');
     const placeholder = $('map-placeholder');
-    if (!frame) return;
-    const src = (frame.dataset.src || '').trim();
-    if (!/^https:\/\//i.test(src)) return;   // لا رابط بعد: يبقى المكان الاحتياطي ظاهراً
-    frame.src = src;
-    frame.classList.remove('hidden');
-    if (placeholder) placeholder.classList.add('hidden');
+    const openBtn = $('map-open');
+
+    const rawEmbed = (box.dataset.embed || '').trim();
+    const embedUrl = extractEmbedUrl(rawEmbed);
+    // رابط المشاركة العادي (أو رابط عادي لصق خطأً في خانة التضمين) يُستخدم لزر "فتح في خرائط جوجل"
+    let link = (box.dataset.link || '').trim();
+    if (!link && rawEmbed && !embedUrl && /^https:\/\//i.test(rawEmbed)) link = rawEmbed;
+
+    if (embedUrl && frame) {
+        frame.src = embedUrl;
+        frame.classList.remove('hidden');
+        if (placeholder) placeholder.classList.add('hidden');
+    } else if (rawEmbed) {
+        console.warn('الخريطة: القيمة في data-embed ليست رابط تضمين صالحاً. استخدم: خرائط جوجل ← مشاركة ← تضمين خريطة، وانسخ قيمة src فقط.');
+    }
+    if (openBtn && /^https:\/\//i.test(link)) {
+        openBtn.href = link;
+        openBtn.classList.remove('hidden');
+        openBtn.classList.add('inline-flex');
+    }
 }
 
 /* ===================== الأسئلة الشائعة ===================== */
@@ -588,9 +636,6 @@ function showFormError(show) {
     }
 }
 
-const WEB3FORMS_ACCESS_KEY = 'c607f429-ad87-4a67-a4e4-868eb59eb7a0';
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
-
 function initRegisterForm() {
     const form = $('register-form');
 
@@ -644,6 +689,7 @@ function initRegisterForm() {
             gender: GENDER_LABELS_AR[$('reg-gender').value],
             track: TRACK_LABELS_AR[$('reg-track').value],
             age_group: AGE_LABELS_AR[$('reg-age').value],
+            notes: $('reg-notes').value.trim() || '-',
             site_language: currentLang
         };
 

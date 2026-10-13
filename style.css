@@ -176,6 +176,10 @@ select:focus-visible {
 #scroll-top-btn { display: none; }
 #scroll-top-btn.visible { display: flex; animation: fadeSlideUp .2s ease-out; }
 
+/* ===================== التذييل: منع قصّ النصوص الطويلة (البريد…) ===================== */
+footer .grid > * { min-width: 0; }
+footer li, footer a { overflow-wrap: anywhere; }
+
 /* ===================== حركات ===================== */
 @keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeSlideUp   { from { opacity: 0; transform: translateY(8px); }  to { opacity: 1; transform: translateY(0); } }

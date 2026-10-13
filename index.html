@@ -21,7 +21,10 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_AR">
 
-    <!-- أيقونة المتصفح (يمكن استبدالها لاحقاً بملف: <link rel="icon" href="images/favicon.png">) -->
+    <!-- أيقونة المتصفح (من الشعار) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23059669'/%3E%3Ctext x='50' y='66' font-size='42' text-anchor='middle' fill='white' font-family='sans-serif'%3Eإب%3C/text%3E%3C/svg%3E">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -130,6 +133,21 @@
                 <div><div class="text-3xl md:text-4xl font-bold text-emerald-400">0</div><div class="text-sm text-slate-400 mt-1" data-i18n="stat.3">تقييم الطلاب</div></div>
             </div>
             -->
+        </div>
+    </section>
+
+    <!-- ===================== عرض: الحصة الأولى مجانية ===================== -->
+    <section id="free-trial" class="py-14 bg-emerald-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-gradient-to-br from-emerald-600 to-emerald-800 text-white shadow-xl px-6 py-10 md:px-12 flex flex-col md:flex-row items-center gap-6 md:gap-10 text-center md:text-start">
+                <div class="text-6xl" aria-hidden="true">🎁</div>
+                <div class="flex-1">
+                    <span class="inline-block bg-white/20 text-sm font-semibold px-3 py-1 rounded-full mb-3" data-i18n="promo.badge">عرض خاص</span>
+                    <h2 class="text-2xl md:text-4xl font-bold mb-3" data-i18n="promo.title">الحصة الأولى مجانية</h2>
+                    <p class="text-emerald-50 leading-relaxed" data-i18n="promo.desc">سجّل الآن واحصل على حصتك الأولى مجاناً لتتعرّف على أسلوب التدريس والمعلّم قبل أن تقرر الاشتراك.</p>
+                </div>
+                <a href="#register" class="shrink-0 bg-white text-emerald-700 hover:bg-emerald-50 font-bold px-8 py-4 rounded-xl shadow-lg transition" data-i18n="promo.cta">احجز حصتك المجانية</a>
+            </div>
         </div>
     </section>
 
@@ -388,6 +406,12 @@
                     </select>
                 </div>
 
+                <!-- ملاحظات (اختياري) -->
+                <div class="sm:col-span-2">
+                    <label for="reg-notes" class="block text-sm font-semibold text-slate-700 mb-2" data-i18n="reg.notes">ملاحظات (اختياري)</label>
+                    <textarea id="reg-notes" name="notes" rows="4" maxlength="1000" class="form-input resize-y" data-i18n-placeholder="reg.notes.ph" placeholder="أي ملاحظات تودّ إيصالها: الأوقات المناسبة للتواصل، مستوى الطالب الحالي…"></textarea>
+                </div>
+
                 <div class="sm:col-span-2">
                     <p class="field-error form-error mb-3" id="reg-form-error" role="alert" hidden></p>
                     <button type="submit" id="reg-submit-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold px-8 py-4 rounded-xl shadow-lg transition" data-i18n="reg.submit">
@@ -412,23 +436,28 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-950 mb-4" data-i18n="map.title">موقعنا</h2>
                 <p class="text-slate-600" data-i18n="map.desc">تعرّف على موقعنا على الخريطة</p>
             </div>
-            <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-100 h-80 md:h-96">
-                <div id="map-placeholder" class="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center text-slate-500">
-                    <span class="text-5xl" aria-hidden="true">📍</span>
-                    <p data-i18n="map.placeholder">سيظهر موقع الأكاديمية على الخريطة هنا</p>
+            <!--
+                ===== خريطة جوجل =====
+                في خرائط جوجل: مشاركة ← تضمين خريطة ← انسخ قيمة src فقط (الرابط الذي يبدأ بـ https://www.google.com/maps/embed?...)
+                والصقها بين علامتي الاقتباس في data-embed. لا تلصق كود <iframe> كاملاً ولا رابط المشاركة العادي هنا.
+                data-link (اختياري): رابط المشاركة العادي (حتى المختصر maps.app.goo.gl) لزر "فتح في خرائط جوجل".
+            -->
+            <div id="map-box" data-embed="" data-link="">
+                <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-100 h-80 md:h-96">
+                    <div id="map-placeholder" class="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center text-slate-500">
+                        <span class="text-5xl" aria-hidden="true">📍</span>
+                        <p data-i18n="map.placeholder">سيظهر موقع الأكاديمية على الخريطة هنا</p>
+                    </div>
+                    <iframe id="map-frame" class="hidden absolute inset-0 w-full h-full border-0"
+                            data-i18n-aria="map.title" aria-label="موقعنا"
+                            loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <!--
-                    ===== رابط خريطة جوجل =====
-                       
-        
-                -->
-                <iframe id="map-frame" class="hidden absolute inset-0 w-full h-full border-0"
-                        data-src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d867754.7595104864!2d35.28815448727082!3d31.834059539406475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b5fb85d7981af%3A0x631c30c0f8dc65e8!2sAmman!5e0!3m2!1sen!2sjo!4v1791613297222!5m2!1sen!2sjo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>"
-                   
-                         data-i18n-aria="map.title" aria-label="موقعنا"
-                        loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
-                    
-                        </iframe>
+                <div class="text-center mt-6">
+                    <a id="map-open" href="#" target="_blank" rel="noopener noreferrer"
+                       class="hidden items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-xl shadow transition">
+                        <span aria-hidden="true">📍</span><span data-i18n="map.open">فتح في خرائط جوجل</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -463,8 +492,8 @@
                 <h4 class="text-white font-semibold mb-4" data-i18n="footer.contact">تواصل معنا</h4>
                 <!-- TODO: استبدل القيم التالية ببيانات التواصل الحقيقية -->
                 <ul class="space-y-2 text-sm">
-                    <li> <bdi>itqan.albayan.academy@gmail.com</bdi></li>
-                    <li> <bdi> &nbsp  WhatsApp  &nbsp  </bdi> <bdi>00962789878366</bdi></li>
+                    <li>📧 <bdi>info@your-domain.com</bdi></li>
+                    <li>📱 <bdi>+000 00 000 0000</bdi></li>
                 </ul>
             </div>
         </div>
