@@ -2,7 +2,23 @@
 <html lang="ar" dir="rtl" id="html-tag">
 <head>
 
-    <!-- Google tag (gtag.js) -->
+    <!--  كود وضع الموافقة الافتراضي من غوغل -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // تعيين الحالة الافتراضية كـ "مرفوض" لحماية الخصوصية لزوار أوروبا
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'wait_for_update': 500 // الانتظار نصف ثانية لتحديث الحالة إذا وافق المستخدم مسبقاً
+  });
+</script>
+
+
+    <!-- Google tag (gtag.js)  غوغل أناليتكس -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7VV1Y226"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -503,7 +519,7 @@
                 <h4 class="text-white font-semibold mb-4" data-i18n="footer.contact">تواصل معنا</h4>
                 <!-- TODO: استبدل القيم التالية ببيانات التواصل الحقيقية -->
                 <ul class="space-y-2 text-sm">
-                    <li>📧 <bdi>info@your-domain.com</bdi></li>
+                    <li>📧 <bdi>itqan.albayan.academy@gmail.com</bdi></li>
                     <li>📱 <bdi>+000 00 000 0000</bdi></li>
                 </ul>
             </div>
@@ -516,6 +532,58 @@
     <button type="button" id="scroll-top-btn" data-i18n-aria="top" aria-label="العودة للأعلى" class="fixed bottom-6 left-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-11 h-11 rounded-full shadow-lg items-center justify-center transition">
         ↑
     </button>
+
+    <!-- شريط الموافقة على ملفات تعريف الارتباط -->
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 20px; right: 20px; left: 20px; background: #222; color: #fff; padding: 15px; text-align: center; z-index: 9999; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+  <p style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 14px;">
+    نحن نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتحليل حركة المرور عبر غوغل أناليتكس.
+  </p>
+  <!-- ربط الأزرار بالدوال عبر حدث onclick -->
+  <button onclick="acceptCookies()" style="background: #4CAF50; color: white; border: none; padding: 8px 20px; margin: 5px; cursor: pointer; border-radius: 4px; font-weight: bold;">أوافق</button>
+  <button onclick="declineCookies()" style="background: #f44336; color: white; border: none; padding: 8px 20px; margin: 5px; cursor: pointer; border-radius: 4px; font-weight: bold;">أرفض</button>
+</div>
+
+
+    // دالة تُستدعى عندما يضغط المستخدم على زر "أوافق"
+function acceptCookies() {
+    gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+    });
+    
+    // إخفاء الشريط وحفظ خيار المستخدم في المتصفح حتى لا يظهر له في كل مرة
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookie_consent', 'granted');
+}
+
+// دالة تُستدعى عندما يضغط المستخدم على زر "أرفض"
+function declineCookies() {
+    // تبقى الحالة denied كما هي افتراضياً
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookie_consent', 'denied');
+}
+
+// التحقق عند تحميل الصفحة إذا كان المستخدم قد وافق سابقاً
+window.addEventListener('DOMContentLoaded', () => {
+    const consent = localStorage.getItem('cookie_consent');
+    if (consent === 'granted') {
+        // تحديث فوري للحالة إذا كان قد وافق في زيارة سابقة
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted'
+        });
+    } else if (!consent) {
+        // إظهار الشريط فقط إذا لم يقم بالاختيار بعد
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+});
+
+
+    
 
     <script src="script.js"></script>
 </body>
