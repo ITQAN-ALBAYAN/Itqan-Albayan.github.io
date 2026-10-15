@@ -31,6 +31,10 @@ const I18N = {
     'nav.reg':     { ar: 'التسجيل', en: 'Register', de: 'Anmeldung' },
     'nav.cta':     { ar: 'سجل معنا الآن', en: 'Register Now', de: 'Jetzt anmelden' },
     'nav.menu':    { ar: 'فتح القائمة', en: 'Open menu', de: 'Menü öffnen' },
+    'cookie.title':   { ar: 'ملفات تعريف الارتباط', en: 'Cookies', de: 'Cookies' },
+    'cookie.text':    { ar: 'نحن نستخدم ملفات تعريف الارتباط لتحسين تجربتك.', en: 'We use cookies to improve your experience.', de: 'Wir verwenden Cookies, um dein Erlebnis zu verbessern.' },
+    'cookie.accept':  { ar: 'أوافق', en: 'Accept', de: 'Zustimmen' },
+    'cookie.decline': { ar: 'أرفض', en: 'Decline', de: 'Ablehnen' },
     'top':         { ar: 'العودة للأعلى', en: 'Back to top', de: 'Nach oben' },
 
     'hero.tag':  { ar: 'مرحباً بكم في أكاديمية إتقان البيان', en: 'Welcome to Itqan Al-Bayan Academy', de: 'Willkommen an der Itqan Al-Bayan Akademie' },
@@ -320,6 +324,7 @@ const $ = (id) => document.getElementById(id);
 
 /* ===================== التهيئة ===================== */
 document.addEventListener('DOMContentLoaded', () => {
+    initCookieConsent();
     initMobileMenu();
     initScrollTopButton();
     initScrollSpy();
@@ -415,6 +420,46 @@ function initMap() {
         openBtn.classList.remove('hidden');
         openBtn.classList.add('inline-flex');
     }
+}
+
+/* ===================== موافقة ملفات تعريف الارتباط (Google Consent Mode) ===================== */
+// الحالة الافتراضية "مرفوض" مُعرّفة في <head>؛ هنا نحدّثها حسب اختيار الزائر المحفوظ في المتصفح.
+const CONSENT_GRANTED = {
+    ad_storage: 'granted',
+    analytics_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted'
+};
+
+function readConsent() {
+    try { return localStorage.getItem('cookie_consent'); } catch (e) { return null; }
+}
+
+function saveConsent(value) {
+    try { localStorage.setItem('cookie_consent', value); } catch (e) { /* التخزين غير متاح */ }
+}
+
+function grantConsent() {
+    if (typeof gtag === 'function') gtag('consent', 'update', CONSENT_GRANTED);
+}
+
+function initCookieConsent() {
+    const banner = $('cookie-banner');
+    const consent = readConsent();
+
+    if (consent === 'granted') { grantConsent(); return; }   // وافق سابقاً: لا يظهر الشريط
+    if (consent === 'denied' || !banner) return;             // رفض سابقاً: تبقى الحالة "مرفوض"
+
+    banner.hidden = false;
+    $('cookie-accept').addEventListener('click', () => {
+        grantConsent();
+        saveConsent('granted');
+        banner.hidden = true;
+    });
+    $('cookie-decline').addEventListener('click', () => {
+        saveConsent('denied');
+        banner.hidden = true;
+    });
 }
 
 /* ===================== الأسئلة الشائعة ===================== */

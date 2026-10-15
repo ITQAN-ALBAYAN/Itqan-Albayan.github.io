@@ -192,3 +192,39 @@ footer li, footer a { overflow-wrap: anywhere; }
 @media print {
     nav, #scroll-top-btn, #register form { display: none; }
 }
+
+
+/* ===================== شريط ملفات تعريف الارتباط ===================== */
+.cookie-banner {
+    position: fixed;
+    inset-inline: 1rem;
+    bottom: 1rem;
+    z-index: 9999;
+    max-width: 40rem;
+    margin-inline: auto;
+    padding: 1rem 1.25rem;
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+    border-radius: .75rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    font-size: .9rem;
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner p { margin: 0 0 .75rem; }
+.cookie-actions { display: flex; justify-content: center; gap: .6rem; flex-wrap: wrap; }
+.cookie-btn { padding: .5rem 1.5rem; border-radius: .5rem; font-weight: 700; cursor: pointer; border: 1px solid transparent; transition: background-color .15s ease; }
+.cookie-btn-accept { background: var(--brand-emerald); color: #fff; }
+.cookie-btn-accept:hover { background: var(--brand-emerald-dark); }
+.cookie-btn-decline { background: transparent; color: #fff; border-color: #64748b; }
+.cookie-btn-decline:hover { background: #1e293b; }
+.cookie-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* ===================== الجوال: منع خروج عناصر شريط التنقل ===================== */
+@media (max-width: 400px) {
+    .lang-btn { padding: .35rem .45rem; }
+}
+
+@media print {
+    .cookie-banner { display: none; }
+}
