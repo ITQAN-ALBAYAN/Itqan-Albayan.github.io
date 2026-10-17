@@ -35,6 +35,7 @@ const I18N = {
     'cookie.text':    { ar: 'نحن نستخدم ملفات تعريف الارتباط لتحسين تجربتك.', en: 'We use cookies to improve your experience.', de: 'Wir verwenden Cookies, um dein Erlebnis zu verbessern.' },
     'cookie.accept':  { ar: 'أوافق', en: 'Accept', de: 'Zustimmen' },
     'cookie.decline': { ar: 'أرفض', en: 'Decline', de: 'Ablehnen' },
+    'wa.label':    { ar: 'تواصل معنا عبر واتساب', en: 'Chat on WhatsApp', de: 'Per WhatsApp schreiben' },
     'top':         { ar: 'العودة للأعلى', en: 'Back to top', de: 'Nach oben' },
 
     'hero.tag':  { ar: 'مرحباً بكم في أكاديمية إتقان البيان', en: 'Welcome to Itqan Al-Bayan Academy', de: 'Willkommen an der Itqan Al-Bayan Akademie' },
