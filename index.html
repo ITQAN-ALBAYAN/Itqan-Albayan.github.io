@@ -2,32 +2,38 @@
 <html lang="ar" dir="rtl" id="html-tag">
 <head>
 
-    <!--  كود وضع الموافقة الافتراضي من غوغل -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  
-  // تعيين الحالة الافتراضية كـ "مرفوض" لحماية الخصوصية لزوار أوروبا
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'analytics_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'wait_for_update': 500 // الانتظار نصف ثانية لتحديث الحالة إذا وافق المستخدم مسبقاً
-  });
-</script>
+    <!-- Google Consent Mode: الحالة الافتراضية "مرفوض"، ثم تُقرأ موافقة الزائر السابقة فوراً (قبل تحميل gtag.js) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
 
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
 
-    <!-- Google tag (gtag.js)  غوغل أناليتكس -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7VV1Y226"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      // إن وافق الزائر سابقاً نحدّث الحالة هنا مباشرة، فيُرسَل أول page_view بالموافقة الصحيحة
+      try {
+        if (localStorage.getItem('cookie_consent') === 'granted') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted'
+          });
+        }
+      } catch (e) { /* التخزين غير متاح: تبقى الحالة "مرفوض" */ }
+    </script>
 
-  gtag('config', 'G-CB7VV1Y226');
-</script>
-    
+    <!-- Google tag (gtag.js) غوغل أناليتكس: يجب أن يأتي بعد سكربت الموافقة أعلاه -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB7VV1Y226"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-CB7VV1Y226');
+    </script>
+
     <meta charset="UTF-8">
 
     <meta name="google-site-verification" content="1-IMuvCVS-ypfKdIuUz4T57hmEgNd0ILNT3v6Ql9Ty8" />
@@ -152,7 +158,7 @@
                 <a href="#programs" class="nav-link py-2 px-2 rounded-lg text-slate-700 hover:bg-emerald-50" data-i18n="nav.programs">برامجنا</a>
                 <a href="#quiz-section" class="nav-link py-2 px-2 rounded-lg text-slate-700 hover:bg-emerald-50" data-i18n="nav.quiz">اختبر تجويدك</a>
                 <a href="#faq" class="nav-link py-2 px-2 rounded-lg text-slate-700 hover:bg-emerald-50" data-i18n="nav.faq">الأسئلة الشائعة</a>
-                <a href="#register" class="nav-link py-2 px-2 rounded-lg bg-emerald-600 text-white text-center mt-2" data-i18n="nav.reg">التسجيل</a>
+                <a href="#register" class="nav-link nav-cta py-2 px-2 rounded-lg bg-emerald-600 text-white text-center mt-2" data-i18n="nav.reg">التسجيل</a>
             </div>
         </div>
     </nav>
