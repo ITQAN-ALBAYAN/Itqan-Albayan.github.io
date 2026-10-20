@@ -63,6 +63,10 @@ select:focus-visible {
 /* ===================== التنقل ===================== */
 .nav-link.active { color: var(--brand-emerald) !important; font-weight: 700; }
 
+/* زر "التسجيل" في قائمة الجوال خلفيته خضراء: يبقى نصه أبيض حتى وهو نشط (وإلا يصير أخضر على أخضر) */
+.nav-link.nav-cta.active { color: #fff !important; background: var(--brand-emerald-dark); }
+#mobile-menu .nav-link.active:not(.nav-cta) { background: #ecfdf5; }
+
 #mobile-menu { animation: fadeSlideDown .2s ease-out; }
 
 /* مبدّل اللغة */
@@ -190,7 +194,7 @@ footer li, footer a { overflow-wrap: anywhere; }
 }
 
 @media print {
-    nav, #scroll-top-btn, #register form { display: none; }
+    nav, #scroll-top-btn, #register form, .cookie-banner { display: none; }
 }
 
 
@@ -225,6 +229,3 @@ footer li, footer a { overflow-wrap: anywhere; }
     .lang-btn { padding: .35rem .45rem; }
 }
 
-@media print {
-    .cookie-banner { display: none; }
-}
