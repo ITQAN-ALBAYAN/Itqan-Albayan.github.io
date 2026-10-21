@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" id="html-tag">
 <head>
-
+    
+    <meta charset="UTF-8">
+    
     <!-- Google Consent Mode: الحالة الافتراضية "مرفوض"، ثم تُقرأ موافقة الزائر السابقة فوراً (قبل تحميل gtag.js) -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -34,8 +36,6 @@
       gtag('config', 'G-CB7VV1Y226');
     </script>
 
-    <meta charset="UTF-8">
-
     <meta name="google-site-verification" content="1-IMuvCVS-ypfKdIuUz4T57hmEgNd0ILNT3v6Ql9Ty8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +43,7 @@
     <!-- SEO -->
     <title>أكاديمية إتقان البيان</title>
     <meta name="description" content="أكاديمية إتقان البيان لتعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى دورات تمكين مهارات اللغتين العربية والإنجليزية تحت إشراف معلمين مجازين.">
-    <meta name="keywords" content="أكاديمية تجويد, تعليم التجويد عن بعد, , تعليم القرآن, إتقان البيان, اتقان البيان, أكاديمية إتقان البيان, اكاديمية اتقان البيان, إجازة قرآنية, مخارج الحروف, دورات لغة عربية, تعلم التجويد, قران كريم بسند, Learn Tajweed online, Arabic academy">
+    <meta name="keywords" content="أكاديمية تجويد, تعليم التجويد عن بعد,قرآن , تجويد , تعليم القرآن, إتقان البيان, اتقان البيان, أكاديمية إتقان البيان, اكاديمية اتقان البيان, إجازة قرآنية, مخارج الحروف, دورات لغة عربية, تعلم التجويد, قران كريم بسند, Learn Tajweed online, Tajweed, intonation , Quran recitation , recitation , Arabic academy">
     <meta name="robots" content="index, follow">
     
     <link rel="canonical" href="https://itqan-albayan.github.io/">
@@ -89,7 +89,11 @@
     <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- useone of those methods for (tailwind) -->
+    <link rel="stylesheet" href="tailwind.css">
+    <!--     <script src="https://cdn.tailwindcss.com"></script> -->
+    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -554,7 +558,7 @@
                 <h4 class="text-white font-semibold mb-4" data-i18n="footer.contact">تواصل معنا</h4>
                 <!-- TODO: استبدل القيم التالية ببيانات التواصل الحقيقية -->
                 <ul class="space-y-2 text-sm">
-                    <li>📧 <bdi>itqan.albayan.academy@gmail.com</bdi></li>
+                    <li><bdi>itqan.albayan.academy@gmail.com</bdi></li>
                     <li class="pt-1">
                         <a href="https://wa.me/962789878366" target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-semibold px-4 py-2 rounded-lg shadow transition">
@@ -566,7 +570,7 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-slate-800 text-xs text-center">
-            <span data-i18n="footer.copy">© {year} أكاديمية إتقان البيان. جميع الحقوق محفوظة.</span>
+            <span data-i18n="footer.copy">© 2026 أكاديمية إتقان البيان. جميع الحقوق محفوظة.</span>
         </div>
     </footer>
 
