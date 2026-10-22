@@ -16,7 +16,7 @@ let currentLang = 'ar';
 const I18N = {
     'meta.title': { ar: 'أكاديمية إتقان البيان', en: 'Itqan Al-Bayan Academy', de: 'Itqan Al-Bayan Akademie' },
     'meta.desc': {
-        ar: 'أكاديمية إتقان البيان لتعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى دورات تمكين مهارات اللغتين العربية والإنجليزية تحت إشراف معلمين مجازين.',
+        ar: 'أكاديمية إتقان البيان لتعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى دورات تمكين مهارات اللغتين العربية والإنجليزية والعلوم التأسيسية تحت إشراف معلمين مجازين.',
         en: 'Itqan Al-Bayan Academy teaches tajweed rules and letter articulation through well-grounded scientific methods, plus Arabic and English language courses under certified teachers.',
         de: 'Die Itqan Al-Bayan Akademie vermittelt Tadschwid-Regeln und Artikulationsorte der Buchstaben nach fundierten Methoden – dazu Arabisch- und Englischkurse bei Lehrkräften mit Idschaza.'
     },
@@ -45,7 +45,7 @@ const I18N = {
         de: '<span class="text-emerald-400">Itqan Al-Bayan</span> Akademie – Tadabbur des Heiligen Korans'
     },
     'hero.desc': {
-        ar: 'منصة أكاديمية متخصصة في تعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى تمكين وتطوير مهارات اللغتين العربية والإنجليزية.',
+        ar: 'منصة أكاديمية متخصصة في تعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى تمكين وتطوير مهارات اللغتين العربية والإنجليزية والعلوم التأسيسية.',
         en: 'A specialized academic platform teaching tajweed rules and letter articulation through well-grounded methods, alongside developing Arabic and English language skills.',
         de: 'Eine spezialisierte Bildungsplattform für die Tadschwid-Regeln und die Artikulationsorte der arabischen Buchstaben nach fundierten wissenschaftlichen Methoden – ergänzt durch die Förderung von Arabisch- und Englischkenntnissen.'
     },
@@ -63,7 +63,7 @@ const I18N = {
     },
     'about.mission.title': { ar: 'رسالتنا', en: 'Our Mission', de: 'Unsere Mission' },
     'about.mission.text': {
-        ar: 'تعليم أحكام التجويد ومخارج الحروف بمنهج علمي مؤصَّل، وتمكين الدارسين من اللغتين العربية والإنجليزية، لنُخرّج قارئاً متقناً ولساناً فصيحاً.',
+        ar: 'تعليم أحكام التجويد ومخارج الحروف بمنهج علمي مؤصَّل، وتمكين الدارسين من اللغتين العربية والإنجليزية والعلوم التأسيسية، لنُخرّج قارئاً متقناً ولساناً فصيحاً.',
         en: 'To teach tajweed rules and letter articulation through a well-grounded scientific method, and to empower learners in Arabic and English — nurturing precise reciters and eloquent speakers.',
         de: 'Die Regeln des Tadschwid und die Artikulationsorte der Buchstaben nach einer fundierten Methode zu vermitteln und Lernende in Arabisch und Englisch zu stärken – für präzise Rezitation und gewandten Ausdruck.'
     },
@@ -179,9 +179,9 @@ const I18N = {
     'reg.email': { ar: 'البريد الإلكتروني', en: 'Email address', de: 'E-Mail-Adresse' },
     'reg.phone': { ar: 'رقم الجوال / واتساب', en: 'Phone / WhatsApp number', de: 'Handy- / WhatsApp-Nummer' },
     'reg.phone.hint': {
-        ar: 'اختر رمز البلد ثم أدخل رقمك (7 أرقام على الأقل)',
-        en: 'Choose your country code, then enter your number (at least 7 digits)',
-        de: 'Wähle die Landesvorwahl und gib deine Nummer ein (mindestens 7 Ziffern)'
+        ar: 'اختر رمز البلد ثم أدخل رقمك ',
+        en: 'Choose your country code, then enter your number ',
+        de: 'Wähle die Landesvorwahl und gib deine Nummer ein '
     },
     'reg.track': { ar: 'المسار المطلوب', en: 'Preferred track', de: 'Gewünschter Pfad' },
     'reg.age':   { ar: 'الفئة العمرية', en: 'Age group', de: 'Altersgruppe' },
@@ -198,7 +198,7 @@ const I18N = {
         de: 'Erforderlich für Kinder und Jugendliche (unter 18), optional für Erwachsene'
     },
     'track.tajweed': { ar: 'علوم القرآن والتجويد', en: 'Quranic Sciences & Tajweed', de: 'Koranwissenschaften & Tadschwid' },
-    'track.arabic':  { ar: 'اللغة العربية والبيان', en: 'Arabic Language & Rhetoric', de: 'Arabische Sprache & Rhetorik' },
+    'track.arabic':  { ar: 'اللغة العربية', en: 'Arabic Language', de: 'Arabische Sprache' },
     'track.english': { ar: 'اللغة الإنجليزية', en: 'English Language', de: 'Englische Sprache' },
     'age.child': { ar: 'أطفال (أقل من 12)', en: 'Children (under 12)', de: 'Kinder (unter 12)' },
     'age.teen':  { ar: 'ناشئة (12 - 17)', en: 'Teens (12–17)', de: 'Jugendliche (12–17)' },
@@ -228,9 +228,9 @@ const I18N = {
         de: 'Bitte gib eine gültige E-Mail-Adresse ein, z. B. name@example.com'
     },
     'err.phone': {
-        ar: 'يرجى إدخال رقم صحيح مكوّن من 7 أرقام على الأقل (أرقام فقط، بدون رمز البلد).',
-        en: 'Please enter a valid number with at least 7 digits (digits only, without the country code).',
-        de: 'Bitte gib eine gültige Nummer mit mindestens 7 Ziffern ein (nur Ziffern, ohne Landesvorwahl).'
+        ar: 'يرجى إدخال رقم صحيح (أرقام فقط، بدون رمز البلد).',
+        en: 'Please enter a valid number (digits only, without the country code).',
+        de: 'Bitte gib eine gültige Nummer (nur Ziffern, ohne Landesvorwahl).'
     },
     'err.send': {
         ar: 'تعذّر إرسال الطلب. يرجى المحاولة لاحقاً أو التواصل معنا مباشرة.',
@@ -247,7 +247,7 @@ const I18N = {
     },
 
     'footer.about': {
-        ar: 'أكاديمية تعليمية متخصصة في تجويد القرآن الكريم ومخارج الحروف وعلوم اللغتين العربية والإنجليزية، تحت إشراف نخبة من المعلمين المجازين.',
+        ar: 'أكاديمية تعليمية متخصصة في تجويد القرآن الكريم ومخارج الحروف وعلوم اللغتين العربية والإنجليزية والعلوم التأسيسية، تحت إشراف نخبة من المعلمين المجازين.',
         en: 'An academy specialized in Quranic tajweed, letter articulation, and Arabic & English language sciences, under certified teachers.',
         de: 'Eine Akademie für Koran-Tadschwid, Artikulationsorte und die Sprachwissenschaften Arabisch und Englisch – unter Lehrkräften mit Idschaza.'
     },
@@ -261,22 +261,23 @@ const I18N = {
     'promo.cta': { ar: 'احجز حصتك المجانية', en: 'Book Your Free Session', de: 'Kostenlose Stunde buchen' },
     'reg.notes': { ar: 'ملاحظات (اختياري)', en: 'Notes (optional)', de: 'Anmerkungen (optional)' },
     'reg.notes.ph': {
-        ar: 'أي ملاحظات تودّ إيصالها: الأوقات المناسبة للتواصل، مستوى الطالب الحالي…',
-        en: 'Anything you would like us to know: best times to reach you, current level…',
-        de: 'Alles, was wir wissen sollten: beste Erreichbarkeit, aktuelles Niveau …'
+        ar: ' الأوقات المناسبة للتواصل، مستوى الطالب الحالي…',
+        en: ' best times to reach you, current level…',
+        de: ' beste Erreichbarkeit, aktuelles Niveau …'
     },
     'map.open': { ar: 'فتح في خرائط جوجل', en: 'Open in Google Maps', de: 'In Google Maps öffnen' },
     'footer.links':   { ar: 'روابط سريعة', en: 'Quick Links', de: 'Schnellzugriff' },
     'footer.contact': { ar: 'تواصل معنا', en: 'Contact Us', de: 'Kontakt' },
     'footer.copy': {
-        ar: '© {year} أكاديمية إتقان البيان. جميع الحقوق محفوظة.',
-        en: '© {year} Itqan Al-Bayan Academy. All rights reserved.',
-        de: '© {year} Itqan Al-Bayan Akademie. Alle Rechte vorbehalten.'
+        ar: '© 2026 أكاديمية إتقان البيان. جميع الحقوق محفوظة.',
+        en: '© 2026 Itqan Al-Bayan Academy. All rights reserved.',
+        de: '© 2026 Itqan Al-Bayan Akademie. Alle Rechte vorbehalten.'
     }
 };
 
 /* رموز الدول (الاسم بالثلاث لغات) */
 const COUNTRIES = [
+    { code: '+49',  ar: 'ألمانيا', en: 'Germany', de: 'Deutschland' },
     { code: '+962', ar: 'الأردن', en: 'Jordan', de: 'Jordanien' },
     { code: '+966', ar: 'السعودية', en: 'Saudi Arabia', de: 'Saudi-Arabien' },
     { code: '+971', ar: 'الإمارات', en: 'UAE', de: 'VAE' },
@@ -296,7 +297,6 @@ const COUNTRIES = [
     { code: '+218', ar: 'ليبيا', en: 'Libya', de: 'Libyen' },
     { code: '+249', ar: 'السودان', en: 'Sudan', de: 'Sudan' },
     { code: '+90',  ar: 'تركيا', en: 'Türkiye', de: 'Türkei' },
-    { code: '+49',  ar: 'ألمانيا', en: 'Germany', de: 'Deutschland' },
     { code: '+43',  ar: 'النمسا', en: 'Austria', de: 'Österreich' },
     { code: '+41',  ar: 'سويسرا', en: 'Switzerland', de: 'Schweiz' },
     { code: '+31',  ar: 'هولندا', en: 'Netherlands', de: 'Niederlande' },
