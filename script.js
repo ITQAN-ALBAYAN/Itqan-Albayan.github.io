@@ -17,8 +17,8 @@ const I18N = {
     'meta.title': { ar: 'أكاديمية إتقان البيان', en: 'Itqan Al-Bayan Academy', de: 'Itqan Al-Bayan Akademie' },
     'meta.desc': {
         ar: 'أكاديمية إتقان البيان لتعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى دورات تمكين مهارات اللغتين العربية والإنجليزية والعلوم التأسيسية تحت إشراف معلمين مجازين.',
-        en: 'Itqan Al-Bayan Academy teaches tajweed rules and letter articulation through well-grounded scientific methods, plus Arabic and English language courses under certified teachers.',
-        de: 'Die Itqan Al-Bayan Akademie vermittelt Tadschwid-Regeln und Artikulationsorte der Buchstaben nach fundierten Methoden – dazu Arabisch- und Englischkurse bei Lehrkräften mit Idschaza.'
+        en: 'Itqan Al-Bayan Academy teaches tajweed rules and letter articulation through well-grounded scientific methods, plus courses that build Arabic and English language skills and the foundational sciences, under certified teachers.',
+        de: 'Die Itqan Al-Bayan Akademie vermittelt Tadschwid-Regeln und Artikulationsorte der Buchstaben nach fundierten Methoden – dazu Kurse zur Stärkung der Arabisch- und Englischkenntnisse sowie der Grundlagenfächer bei Lehrkräften mit Idschaza.'
     },
 
     'nav.brand':   { ar: 'إتقان البيان', en: 'Itqan Al-Bayan', de: 'Itqan Al-Bayan' },
@@ -37,6 +37,7 @@ const I18N = {
     'cookie.decline': { ar: 'أرفض', en: 'Decline', de: 'Ablehnen' },
     'wa.label':    { ar: 'تواصل معنا عبر واتساب', en: 'Chat on WhatsApp', de: 'Per WhatsApp schreiben' },
     'top':         { ar: 'العودة للأعلى', en: 'Back to top', de: 'Nach oben' },
+    'lang.label':  { ar: 'اللغة', en: 'Language', de: 'Sprache' },
 
     'hero.tag':  { ar: 'مرحباً بكم في أكاديمية إتقان البيان', en: 'Welcome to Itqan Al-Bayan Academy', de: 'Willkommen an der Itqan Al-Bayan Akademie' },
     'hero.title': {
@@ -46,8 +47,8 @@ const I18N = {
     },
     'hero.desc': {
         ar: 'منصة أكاديمية متخصصة في تعليم أحكام التجويد ومخارج الحروف بالطرق العلمية المؤصلة، بالإضافة إلى تمكين وتطوير مهارات اللغتين العربية والإنجليزية والعلوم التأسيسية.',
-        en: 'A specialized academic platform teaching tajweed rules and letter articulation through well-grounded methods, alongside developing Arabic and English language skills.',
-        de: 'Eine spezialisierte Bildungsplattform für die Tadschwid-Regeln und die Artikulationsorte der arabischen Buchstaben nach fundierten wissenschaftlichen Methoden – ergänzt durch die Förderung von Arabisch- und Englischkenntnissen.'
+        en: 'A specialized academic platform teaching tajweed rules and letter articulation through well-grounded methods, alongside developing Arabic and English language skills and the foundational sciences.',
+        de: 'Eine spezialisierte Bildungsplattform für die Tadschwid-Regeln und die Artikulationsorte der arabischen Buchstaben nach fundierten wissenschaftlichen Methoden – ergänzt durch die Förderung von Arabisch- und Englischkenntnissen sowie der Grundlagenfächer.'
     },
     'hero.btn1': { ar: 'ابدأ رحلتك التعليمية الآن', en: 'Start Your Learning Journey', de: 'Starte jetzt deine Lernreise' },
     'hero.btn2': { ar: 'حدد مستواك في التجويد في ثوانٍ', en: 'Find Your Tajweed Level in Seconds', de: 'Finde in Sekunden dein Tadschwid-Niveau' },
@@ -64,8 +65,8 @@ const I18N = {
     'about.mission.title': { ar: 'رسالتنا', en: 'Our Mission', de: 'Unsere Mission' },
     'about.mission.text': {
         ar: 'تعليم أحكام التجويد ومخارج الحروف بمنهج علمي مؤصَّل، وتمكين الدارسين من اللغتين العربية والإنجليزية والعلوم التأسيسية، لنُخرّج قارئاً متقناً ولساناً فصيحاً.',
-        en: 'To teach tajweed rules and letter articulation through a well-grounded scientific method, and to empower learners in Arabic and English — nurturing precise reciters and eloquent speakers.',
-        de: 'Die Regeln des Tadschwid und die Artikulationsorte der Buchstaben nach einer fundierten Methode zu vermitteln und Lernende in Arabisch und Englisch zu stärken – für präzise Rezitation und gewandten Ausdruck.'
+        en: 'To teach tajweed rules and letter articulation through a well-grounded scientific method, and to empower learners in Arabic, English and the foundational sciences — nurturing precise reciters and eloquent speakers.',
+        de: 'Die Regeln des Tadschwid und die Artikulationsorte der Buchstaben nach einer fundierten Methode zu vermitteln und Lernende in Arabisch, Englisch und den Grundlagenfächern zu stärken – für präzise Rezitation und gewandten Ausdruck.'
     },
     'about.vision.title': { ar: 'رؤيتنا', en: 'Our Vision', de: 'Unsere Vision' },
     'about.vision.text': {
@@ -110,8 +111,8 @@ const I18N = {
     'quiz.title': { ar: 'أداة تحديد المستوى السريع', en: 'Quick Level Assessment', de: 'Schnelltest zur Niveaubestimmung' },
     'quiz.desc': {
         ar: 'اختبر معلوماتك التجويدية الأساسية في دقيقة واحدة واكتشف ما تحتاجه للوصول إلى مرتبة المهرة بالقرآن.',
-        en: 'Test your basic tajweed knowledge in one minute and discover what you need to master the recitation of the Quran.',
-        de: 'Teste dein Tadschwid-Grundwissen in einer Minute und finde heraus, was du brauchst, um die Koranrezitation zu meistern.'
+        en: 'Test your basic tajweed knowledge in one minute and discover what you need to reach the rank of the skilled reciters of the Quran (al-Mahara).',
+        de: 'Teste dein Tadschwid-Grundwissen in einer Minute und finde heraus, was du brauchst, um den Rang der versierten Koranrezitatoren (Mahara) zu erreichen.'
     },
     'quiz.progress': { ar: 'السؤال {n} من {total}', en: 'Question {n} of {total}', de: 'Frage {n} von {total}' },
     'quiz.restart':  { ar: 'إعادة الاختبار', en: 'Retake Quiz', de: 'Test wiederholen' },
@@ -200,6 +201,7 @@ const I18N = {
     'track.tajweed': { ar: 'علوم القرآن والتجويد', en: 'Quranic Sciences & Tajweed', de: 'Koranwissenschaften & Tadschwid' },
     'track.arabic':  { ar: 'اللغة العربية', en: 'Arabic Language', de: 'Arabische Sprache' },
     'track.english': { ar: 'اللغة الإنجليزية', en: 'English Language', de: 'Englische Sprache' },
+    'track.foundation': { ar: 'علوم تأسيسية (مواد مدرسية)', en: 'Foundational Sciences (School Subjects)', de: 'Grundlagenfächer (Schulfächer)' },
     'age.child': { ar: 'أطفال (أقل من 12)', en: 'Children (under 12)', de: 'Kinder (unter 12)' },
     'age.teen':  { ar: 'ناشئة (12 - 17)', en: 'Teens (12–17)', de: 'Jugendliche (12–17)' },
     'age.adult': { ar: 'بالغون (18+)', en: 'Adults (18+)', de: 'Erwachsene (ab 18)' },
@@ -248,8 +250,8 @@ const I18N = {
 
     'footer.about': {
         ar: 'أكاديمية تعليمية متخصصة في تجويد القرآن الكريم ومخارج الحروف وعلوم اللغتين العربية والإنجليزية والعلوم التأسيسية، تحت إشراف نخبة من المعلمين المجازين.',
-        en: 'An academy specialized in Quranic tajweed, letter articulation, and Arabic & English language sciences, under certified teachers.',
-        de: 'Eine Akademie für Koran-Tadschwid, Artikulationsorte und die Sprachwissenschaften Arabisch und Englisch – unter Lehrkräften mit Idschaza.'
+        en: 'An academy specialized in Quranic tajweed, letter articulation, Arabic & English language sciences and the foundational sciences, under certified teachers.',
+        de: 'Eine Akademie für Koran-Tadschwid, Artikulationsorte die Sprachwissenschaften Arabisch und Englisch sowie die Grundlagenfächer – unter Lehrkräften mit Idschaza.'
     },
     'promo.badge': { ar: 'عرض خاص', en: 'Special Offer', de: 'Sonderangebot' },
     'promo.title': { ar: 'الحصة الأولى مجانية', en: 'Your First Session Is Free', de: 'Die erste Stunde ist kostenlos' },
@@ -276,8 +278,59 @@ const I18N = {
 };
 
 /* رموز الدول (الاسم بالثلاث لغات) */
+const DEFAULT_COUNTRY_CODE = '+49'; // ألمانيا
 const COUNTRIES = [
+    /* الافتراضي: ألمانيا */
     { code: '+49',  ar: 'ألمانيا', en: 'Germany', de: 'Deutschland' },
+
+    /* أوروبا: الدول الناطقة بالألمانية والإنجليزية أولاً */
+    { code: '+43',  ar: 'النمسا', en: 'Austria', de: 'Österreich' },
+    { code: '+41',  ar: 'سويسرا', en: 'Switzerland', de: 'Schweiz' },
+    { code: '+423', ar: 'ليختنشتاين', en: 'Liechtenstein', de: 'Liechtenstein' },
+    { code: '+44',  ar: 'بريطانيا', en: 'United Kingdom', de: 'Vereinigtes Königreich' },
+    { code: '+353', ar: 'أيرلندا', en: 'Ireland', de: 'Irland' },
+    { code: '+356', ar: 'مالطا', en: 'Malta', de: 'Malta' },
+    { code: '+350', ar: 'جبل طارق', en: 'Gibraltar', de: 'Gibraltar' },
+    { code: '+357', ar: 'قبرص', en: 'Cyprus', de: 'Zypern' },
+
+    /* أوروبا الغربية والجنوبية */
+    { code: '+31',  ar: 'هولندا', en: 'Netherlands', de: 'Niederlande' },
+    { code: '+32',  ar: 'بلجيكا', en: 'Belgium', de: 'Belgien' },
+    { code: '+352', ar: 'لوكسمبورغ', en: 'Luxembourg', de: 'Luxemburg' },
+    { code: '+33',  ar: 'فرنسا', en: 'France', de: 'Frankreich' },
+    { code: '+34',  ar: 'إسبانيا', en: 'Spain', de: 'Spanien' },
+    { code: '+351', ar: 'البرتغال', en: 'Portugal', de: 'Portugal' },
+    { code: '+39',  ar: 'إيطاليا', en: 'Italy', de: 'Italien' },
+    { code: '+30',  ar: 'اليونان', en: 'Greece', de: 'Griechenland' },
+
+    /* أوروبا الشمالية */
+    { code: '+45',  ar: 'الدنمارك', en: 'Denmark', de: 'Dänemark' },
+    { code: '+46',  ar: 'السويد', en: 'Sweden', de: 'Schweden' },
+    { code: '+47',  ar: 'النرويج', en: 'Norway', de: 'Norwegen' },
+    { code: '+358', ar: 'فنلندا', en: 'Finland', de: 'Finnland' },
+    { code: '+354', ar: 'آيسلندا', en: 'Iceland', de: 'Island' },
+    { code: '+372', ar: 'إستونيا', en: 'Estonia', de: 'Estland' },
+    { code: '+371', ar: 'لاتفيا', en: 'Latvia', de: 'Lettland' },
+    { code: '+370', ar: 'ليتوانيا', en: 'Lithuania', de: 'Litauen' },
+
+    /* أوروبا الشرقية والبلقان */
+    { code: '+48',  ar: 'بولندا', en: 'Poland', de: 'Polen' },
+    { code: '+420', ar: 'التشيك', en: 'Czechia', de: 'Tschechien' },
+    { code: '+421', ar: 'سلوفاكيا', en: 'Slovakia', de: 'Slowakei' },
+    { code: '+36',  ar: 'المجر', en: 'Hungary', de: 'Ungarn' },
+    { code: '+40',  ar: 'رومانيا', en: 'Romania', de: 'Rumänien' },
+    { code: '+359', ar: 'بلغاريا', en: 'Bulgaria', de: 'Bulgarien' },
+    { code: '+385', ar: 'كرواتيا', en: 'Croatia', de: 'Kroatien' },
+    { code: '+386', ar: 'سلوفينيا', en: 'Slovenia', de: 'Slowenien' },
+    { code: '+381', ar: 'صربيا', en: 'Serbia', de: 'Serbien' },
+    { code: '+387', ar: 'البوسنة والهرسك', en: 'Bosnia & Herzegovina', de: 'Bosnien und Herzegowina' },
+    { code: '+382', ar: 'الجبل الأسود', en: 'Montenegro', de: 'Montenegro' },
+    { code: '+383', ar: 'كوسوفو', en: 'Kosovo', de: 'Kosovo' },
+    { code: '+389', ar: 'مقدونيا الشمالية', en: 'North Macedonia', de: 'Nordmazedonien' },
+    { code: '+355', ar: 'ألبانيا', en: 'Albania', de: 'Albanien' },
+    { code: '+380', ar: 'أوكرانيا', en: 'Ukraine', de: 'Ukraine' },
+
+    /* الدول العربية وتركيا */
     { code: '+962', ar: 'الأردن', en: 'Jordan', de: 'Jordanien' },
     { code: '+966', ar: 'السعودية', en: 'Saudi Arabia', de: 'Saudi-Arabien' },
     { code: '+971', ar: 'الإمارات', en: 'UAE', de: 'VAE' },
@@ -297,11 +350,8 @@ const COUNTRIES = [
     { code: '+218', ar: 'ليبيا', en: 'Libya', de: 'Libyen' },
     { code: '+249', ar: 'السودان', en: 'Sudan', de: 'Sudan' },
     { code: '+90',  ar: 'تركيا', en: 'Türkiye', de: 'Türkei' },
-    { code: '+43',  ar: 'النمسا', en: 'Austria', de: 'Österreich' },
-    { code: '+41',  ar: 'سويسرا', en: 'Switzerland', de: 'Schweiz' },
-    { code: '+31',  ar: 'هولندا', en: 'Netherlands', de: 'Niederlande' },
-    { code: '+33',  ar: 'فرنسا', en: 'France', de: 'Frankreich' },
-    { code: '+44',  ar: 'بريطانيا', en: 'United Kingdom', de: 'Vereinigtes Königreich' },
+
+    /* بقية العالم */
     { code: '+1',   ar: 'أمريكا الشمالية', en: 'USA / Canada', de: 'USA / Kanada' },
     { code: '+61',  ar: 'أستراليا', en: 'Australia', de: 'Australien' },
     { code: '+92',  ar: 'باكستان', en: 'Pakistan', de: 'Pakistan' },
@@ -310,7 +360,7 @@ const COUNTRIES = [
 ];
 
 /* تسميات تصل إلى بريدك دائماً بالعربية بغض النظر عن لغة الزائر */
-const TRACK_LABELS_AR = { tajweed: 'علوم القرآن والتجويد', arabic: 'اللغة العربية والبيان', english: 'اللغة الإنجليزية' };
+const TRACK_LABELS_AR = { tajweed: 'علوم القرآن والتجويد', arabic: 'اللغة العربية والبيان', english: 'اللغة الإنجليزية', foundation: 'علوم تأسيسية (مواد مدرسية)' };
 const GENDER_LABELS_AR = { male: 'ذكر', female: 'أنثى' };
 const AGE_LABELS_AR = { child: 'أطفال (أقل من 12)', teen: 'ناشئة (12 - 17)', adult: 'بالغون (18+)' };
 
@@ -770,7 +820,7 @@ function initRegisterForm() {
 /* ===================== اللغات (عربي / English / Deutsch) ===================== */
 function renderCountryOptions() {
     const select = $('reg-country');
-    const previous = select.value || '+962';
+    const previous = select.value || DEFAULT_COUNTRY_CODE;
     select.replaceChildren();
     COUNTRIES.forEach(c => {
         const opt = document.createElement('option');
@@ -799,6 +849,8 @@ function applyLanguage(lang) {
         btn.classList.toggle('active', active);
         btn.setAttribute('aria-pressed', String(active));
     });
+    const langCurrent = $('lang-current');
+    if (langCurrent) langCurrent.textContent = lang.toUpperCase();
 
     renderCountryOptions();
 
@@ -811,11 +863,41 @@ function applyLanguage(lang) {
     else renderQuestion();
 }
 
+function setLangMenu(open) {
+    const menu = $('lang-menu');
+    const toggle = $('lang-toggle');
+    if (!menu || !toggle) return;
+    menu.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+}
+
 function initLanguage() {
+    const toggle = $('lang-toggle');
+    const menu = $('lang-menu');
+    const dropdown = $('lang-dropdown');
+
+    // فتح/إغلاق القائمة المنسدلة
+    if (toggle && menu) {
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setLangMenu(menu.hidden);
+        });
+        // إغلاق عند النقر خارج القائمة
+        document.addEventListener('click', (e) => {
+            if (dropdown && !dropdown.contains(e.target)) setLangMenu(false);
+        });
+        // إغلاق بمفتاح Esc وإرجاع التركيز للزر
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !menu.hidden) { setLangMenu(false); toggle.focus(); }
+        });
+    }
+
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             applyLanguage(btn.dataset.lang);
             try { localStorage.setItem('site-lang', btn.dataset.lang); } catch (e) { /* التخزين غير متاح */ }
+            setLangMenu(false);
+            if (toggle) toggle.focus();
         });
     });
 
