@@ -66,7 +66,7 @@
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
       "name": "أكاديمية إتقان البيان",
-      "alternateName": ["Itqan Al-Bayan Academy", "Itqan Albayan"],
+      "alternateName": ["Itqan Al-Bayan Academy", "اتقان البيان", "أكاديمية إتقان البيان " , "Itqan Albayan" , "Itqan Al-Bayan" , "إتقان البيان"],
       "url": "https://itqan-albayan.github.io/",
       "logo": "https://itqan-albayan.github.io/images/logo-512.png"
     }
@@ -76,7 +76,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "أكاديمية إتقان البيان",
-      "alternateName": ["Itqan Al-Bayan Academy", "Itqan Albayan"],
+      "alternateName": ["Itqan Al-Bayan Academy", "اتقان البيان", "أكاديمية إتقان البيان " , "Itqan Albayan" , "Itqan Al-Bayan" , "إتقان البيان"],
       "url": "https://itqan-albayan.github.io/"
     }
     </script>
@@ -434,7 +434,7 @@
 
                 <!-- اسم الوالد / الولي (مطلوب للأطفال والناشئة، اختياري للبالغين) -->
                 <div class="sm:col-span-1">
-                    <label for="reg-guardian" class="block text-sm font-semibold text-slate-700 mb-2" data-i18n="reg.guardian">اسم الوالد / الولي</label>
+                    <label for="reg-guardian" class="block text-sm font-semibold text-slate-700 mb-2" data-i18n="reg.guardian">اسم والد/ولي الطالب </label>
                     <input type="text" id="reg-guardian" name="guardian_name" autocomplete="off" class="form-input" data-i18n-placeholder="reg.guardian.ph" placeholder="مثال: أحمد محمد">
                     <p class="text-xs text-slate-500 mt-1.5" data-i18n="reg.guardian.hint">مطلوب للأطفال والناشئة (أقل من 18 سنة)، واختياري للبالغين</p>
                     <p class="field-error" id="err-guardian" role="alert" hidden></p>
@@ -457,11 +457,11 @@
                     <div class="flex gap-2" dir="ltr">
                         <select id="reg-country" name="country_code" autocomplete="tel-country-code" class="form-input phone-country" aria-label="Country code">
                             <!-- تُملأ تلقائياً من script.js -->
-                            <option value="+49">+49 ألمانيا</option>
+                            <option value="+963">+963 سوريا</option>
                         </select>
                         <input type="tel" id="reg-phone" name="phone" inputmode="numeric" autocomplete="tel-national" maxlength="20" class="form-input flex-1 min-w-0" placeholder="151 2345 6789">
                     </div>
-                    <p class="text-xs text-slate-500 mt-1.5" data-i18n="reg.phone.hint">اختر رمز البلد ثم أدخل رقمك (7 أرقام على الأقل)</p>
+                    <p class="text-xs text-slate-500 mt-1.5" data-i18n="reg.phone.hint"> اختر رمز البلد ثم أدخل رقمك </p>
                     <p class="field-error" id="err-phone" role="alert" hidden></p>
                 </div>
 
@@ -489,7 +489,7 @@
                 <!-- ملاحظات (اختياري) -->
                 <div class="sm:col-span-2">
                     <label for="reg-notes" class="block text-sm font-semibold text-slate-700 mb-2" data-i18n="reg.notes">ملاحظات (اختياري)</label>
-                    <textarea id="reg-notes" name="notes" rows="4" maxlength="1000" class="form-input resize-y" data-i18n-placeholder="reg.notes.ph" placeholder="أي ملاحظات تودّ إيصالها: الأوقات المناسبة للتواصل، مستوى الطالب الحالي…"></textarea>
+                    <textarea id="reg-notes" name="notes" rows="2" maxlength="128" class="form-input resize-y" data-i18n-placeholder="reg.notes.ph" placeholder=" الأوقات المناسبة للتواصل، مستوى الطالب الحالي…"></textarea>
                 </div>
 
                 <!-- الموافقة على شروط الخصوصية (إجبارية، غير مفعّلة افتراضياً) -->
@@ -515,7 +515,11 @@
                     <button type="submit" id="reg-submit-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold px-8 py-4 rounded-xl shadow-lg transition" data-i18n="reg.submit">
                         إرسال طلب التسجيل
                     </button>
+                    
+                    <!--                     
                     <p class="text-xs text-slate-500 text-center mt-3" data-i18n="reg.privacy">نستخدم بياناتك للتواصل معك بخصوص التسجيل فقط.</p>
+                    -->
+                    
                 </div>
             </form>
 
