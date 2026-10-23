@@ -492,6 +492,24 @@
                     <textarea id="reg-notes" name="notes" rows="4" maxlength="1000" class="form-input resize-y" data-i18n-placeholder="reg.notes.ph" placeholder="أي ملاحظات تودّ إيصالها: الأوقات المناسبة للتواصل، مستوى الطالب الحالي…"></textarea>
                 </div>
 
+                <!-- الموافقة على شروط الخصوصية (إجبارية، غير مفعّلة افتراضياً) -->
+                <div class="sm:col-span-2">
+                    <div class="consent-row">
+                        <input type="checkbox" id="reg-consent" name="privacy_consent" class="consent-box" aria-describedby="err-consent">
+                        <label for="reg-consent">
+                            <span data-i18n="reg.consent.pre">أوافق على</span>
+                            <button type="button" class="policy-link" data-policy-toggle="policy-form" aria-expanded="false" aria-controls="policy-form" data-i18n="reg.consent.link">شروط الخصوصية</button>
+                            <span data-i18n="reg.consent.post">وأنا فوق السن القانوني</span>
+                        </label>
+                    </div>
+                    <p class="field-error" id="err-consent" role="alert" hidden></p>
+                    <div id="policy-form" class="policy-panel" aria-hidden="true">
+                        <div class="policy-panel-inner">
+                            <div class="policy-content" data-i18n-html="privacy.body"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="sm:col-span-2">
                     <p class="field-error form-error mb-3" id="reg-form-error" role="alert" hidden></p>
                     <button type="submit" id="reg-submit-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold px-8 py-4 rounded-xl shadow-lg transition" data-i18n="reg.submit">
@@ -587,6 +605,13 @@
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-slate-800 text-xs text-center">
             <span data-i18n="footer.copy">© 2026 أكاديمية إتقان البيان. جميع الحقوق محفوظة.</span>
+            <span class="policy-sep" aria-hidden="true">·</span>
+            <button type="button" class="policy-link policy-link--footer" data-policy-toggle="policy-footer" aria-expanded="false" aria-controls="policy-footer" data-i18n="footer.privacy">شروط الخصوصية</button>
+            <div id="policy-footer" class="policy-panel policy-panel--footer" aria-hidden="true">
+                        <div class="policy-panel-inner">
+                            <div class="policy-content" data-i18n-html="privacy.body"></div>
+                        </div>
+                    </div>
         </div>
     </footer>
 

@@ -39,6 +39,25 @@ const I18N = {
     'top':         { ar: 'العودة للأعلى', en: 'Back to top', de: 'Nach oben' },
     'lang.label':  { ar: 'اللغة', en: 'Language', de: 'Sprache' },
 
+    /* ===== شروط الخصوصية =====
+       'privacy.body' هو نص الأكورديون، ويظهر في المكانين (التذييل + النموذج) من هذا المصدر الواحد.
+       اكتب النص بصيغة HTML بسيطة: <h4> للعناوين الفرعية، <p> للفقرات، <ul><li> للقوائم.
+       ملاحظة: استخدم (\') عند وجود فاصلة عليا داخل النص الإنجليزي. */
+    'footer.privacy': { ar: 'شروط الخصوصية', en: 'Privacy Terms', de: 'Datenschutzbestimmungen' },
+    'privacy.body': {
+        ar: '<p>سيُضاف نص شروط الخصوصية هنا.</p>',
+        en: '<p>The privacy terms text will be added here.</p>',
+        de: '<p>Der Text der Datenschutzbestimmungen wird hier ergänzt.</p>'
+    },
+    'reg.consent.pre':  { ar: 'أوافق على', en: 'I agree to the', de: 'Ich stimme den' },
+    'reg.consent.link': { ar: 'شروط الخصوصية', en: 'Privacy Terms', de: 'Datenschutzbestimmungen' },
+    'reg.consent.post': { ar: 'وأنا فوق السن القانوني', en: 'and I confirm that I am above the legal age', de: 'zu und bestätige, dass ich volljährig bin' },
+    'err.consent': {
+        ar: 'يجب الموافقة على شروط الخصوصية لإرسال الطلب.',
+        en: 'You must accept the Privacy Terms to submit your request.',
+        de: 'Bitte stimme den Datenschutzbestimmungen zu, um die Anmeldung abzusenden.'
+    },
+
     'hero.tag':  { ar: 'مرحباً بكم في أكاديمية إتقان البيان', en: 'Welcome to Itqan Al-Bayan Academy', de: 'Willkommen an der Itqan Al-Bayan Akademie' },
     'hero.title': {
         ar: 'أكاديمية <span class="text-emerald-400">إتقان البيان</span> تدبّر القرآن الكريم',
@@ -382,6 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLogoSlots();
     initQuiz();
     initRegisterForm();
+    initPolicyAccordion();
     initMap();
     initLanguage();
 });
@@ -694,7 +714,9 @@ const FIELD_RULES = {
     phone: { input: 'reg-phone', error: 'err-phone', key: 'err.phone', valid: v => isValidPhone(v) },
     // اسم الوالد/الولي: مطلوب للأطفال والناشئة، واختياري للبالغين
     gender: { input: 'reg-gender', error: 'err-gender', key: 'err.gender', valid: v => v === 'male' || v === 'female' },
-    guardian: { input: 'reg-guardian', error: 'err-guardian', key: 'err.guardian', valid: v => $('reg-age').value === 'adult' || v.trim().length >= 2 }
+    guardian: { input: 'reg-guardian', error: 'err-guardian', key: 'err.guardian', valid: v => $('reg-age').value === 'adult' || v.trim().length >= 2 },
+    // مربع الموافقة على شروط الخصوصية: إجباري (القيمة هنا true/false وليست نصاً)
+    consent: { input: 'reg-consent', error: 'err-consent', key: 'err.consent', valid: v => v === true }
 };
 
 function setFieldError(field, show) {
@@ -715,7 +737,8 @@ function setFieldError(field, show) {
 }
 
 function validateField(field) {
-    const ok = FIELD_RULES[field].valid($(FIELD_RULES[field].input).value);
+    const el = $(FIELD_RULES[field].input);
+    const ok = FIELD_RULES[field].valid(el.type === 'checkbox' ? el.checked : el.value);
     setFieldError(field, !ok);
     return ok;
 }
@@ -737,11 +760,15 @@ function initRegisterForm() {
 
     Object.keys(FIELD_RULES).forEach(field => {
         const input = $(FIELD_RULES[field].input);
-        input.addEventListener('blur', () => { if (input.value.trim() !== '') validateField(field); });
+        input.addEventListener('blur', () => { if (input.type !== 'checkbox' && input.value.trim() !== '') validateField(field); });
         input.addEventListener('input', () => {
             // إعادة التحقق مباشرة فقط إذا كان الحقل معلَّماً بالخطأ
             if (input.getAttribute('aria-invalid') === 'true') validateField(field);
         });
+    });
+
+    $('reg-consent').addEventListener('change', () => {
+        if ($('reg-consent').getAttribute('aria-invalid') === 'true') validateField('consent');
     });
 
     // عند تغيير الفئة العمرية: أعد فحص حقل الوالد إن كان معلَّماً بالخطأ
@@ -786,6 +813,8 @@ function initRegisterForm() {
             track: TRACK_LABELS_AR[$('reg-track').value],
             age_group: AGE_LABELS_AR[$('reg-age').value],
             notes: $('reg-notes').value.trim() || '-',
+            privacy_consent: 'نعم: وافق على شروط الخصوصية وأقرّ بأنه فوق السن القانوني',
+            consent_time: new Date().toISOString(),
             site_language: currentLang
         };
 
@@ -814,6 +843,32 @@ function initRegisterForm() {
             submitBtn.dataset.i18n = 'reg.submit';
             submitBtn.textContent = t('reg.submit');
         }
+    });
+}
+
+/* ===================== شروط الخصوصية (أكورديون) ===================== */
+// أي زر يحمل data-policy-toggle="<id اللوحة>" يفتح/يغلق تلك اللوحة (التذييل أو النموذج)
+function setPolicyOpen(panelId, open) {
+    const panel = $(panelId);
+    if (!panel) return;
+    panel.classList.toggle('open', open);
+    panel.setAttribute('aria-hidden', String(!open));
+    document.querySelectorAll('[data-policy-toggle="' + panelId + '"]').forEach(btn => {
+        btn.setAttribute('aria-expanded', String(open));
+    });
+    // بعد انتهاء الحركة: تأكد أن اللوحة المفتوحة ظاهرة على الشاشة
+    if (open) setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 320);
+}
+
+function initPolicyAccordion() {
+    // تفويض الحدث على document حتى يبقى يعمل عند تغيير اللغة وإعادة رسم النصوص
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-policy-toggle]');
+        if (!btn) return;
+        e.preventDefault(); // يمنع أن يغيّر الضغط على الرابط حالة المربع المجاور
+        const id = btn.dataset.policyToggle;
+        const panel = $(id);
+        if (panel) setPolicyOpen(id, !panel.classList.contains('open'));
     });
 }
 
