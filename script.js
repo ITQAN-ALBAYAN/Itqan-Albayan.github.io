@@ -2,10 +2,7 @@
    أكاديمية إتقان البيان — البرمجة التفاعلية
    ===================================================== */
 
-/* ╔═══════════════════════════════════════════════════╗
-   ║  ضع مفتاح Web3Forms (Access Key) هنا بين علامتي   ║
-   ║  الاقتباس بدل YOUR_ACCESS_KEY_HERE                ║
-   ╚═══════════════════════════════════════════════════╝ */
+
 const WEB3FORMS_ACCESS_KEY = 'c607f429-ad87-4a67-a4e4-868eb59eb7a0';
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
@@ -45,7 +42,37 @@ const I18N = {
        ملاحظة: استخدم (\') عند وجود فاصلة عليا داخل النص الإنجليزي. */
     'footer.privacy': { ar: 'شروط الخصوصية', en: 'Privacy Terms', de: 'Datenschutzbestimmungen' },
     'privacy.body': {
-        ar: '<p>سيُضاف نص شروط الخصوصية هنا.</p>',
+        ar: '<p>
+           <h4>سياسة الخصوصية لـ <strong>موقع إتقان البيان</strong></h4>
+<p>نلتزم بحماية بياناتك الشخصية ومعالجتها بأمان وفقاً للائحة <strong>(GDPR)</strong>.</p>
+
+<p><strong>1. البيانات التي نجمعها والأغراض:</strong></p>
+<ul>
+  <li><strong>بيانات الاتصال:</strong> (الاسم، البريد الإلكتروني، نص الرسالة) للرد على استفساراتك.</li>
+  <li><strong>بيانات التصفح (Cookies):</strong> (عنوان IP، نوع المتصفح، الصفحات المزارة) عبر Google Analytics لتحسين الموقع.</li>
+</ul>
+
+<p><strong>2. الأساس القانوني:</strong></p>
+<p>موافقتك الصريحة عند إرسال النموذج، ومصلحتنا المشروعة في تحليل وتأمين الموقع.</p>
+
+<p><strong>3. أطراف ثالثة نشاركها البيانات:</strong></p>
+<p>خدمات موثوقة بموجب اتفاقيات (DPA): <strong>Web3Forms</strong> لإرسال الرسائل، و<strong>Google Analytics</strong> للإحصاءات.</p>
+
+<p><strong>4. نقل البيانات الدولي:</strong></p>
+<p>تُعالج بعض البيانات خارج الاتحاد الأوروبي (في أمريكا) بواسطة شركائنا مع ضمان الحماية عبر الشروط التعاقدية القياسية <strong>(SCCs)</strong>.</p>
+
+<p><strong>5. حماية القُصَّر:</strong></p>
+<p>الموقع غير موجه للأطفال دون سن <strong>16 عاماً</strong>، ولا نجمع بياناتهم عمداً.</p>
+
+<p><strong>6. حقوقك القانونية (المواد 15 و17 من GDPR):</strong></p>
+<ul>
+  <li><strong>حق الوصول:</strong> طلب نسخة من بياناتك الشخصية المخزنة لدينا.</li>
+  <li><strong>حق الحذف:</strong> طلب حذف بياناتك نهائياً من سيرفراتنا وسيرفرات شركائنا.</li>
+</ul>
+
+<p><strong>7. ممارسة حقوقك:</strong></p>
+<p>للتعديل أو الحذف المباشر، راسلنا عبر البريد الإلكتروني: <strong>itqan.albayan.academy@gmail.com</strong></p>
+</p>',
         en: '<p>The privacy terms text will be added here.</p>',
         de: '<p>Der Text der Datenschutzbestimmungen wird hier ergänzt.</p>'
     },
@@ -210,7 +237,7 @@ const I18N = {
     'gender.male': { ar: 'ذكر', en: 'Male', de: 'Männlich' },
     'gender.female': { ar: 'أنثى', en: 'Female', de: 'Weiblich' },
     'err.gender': { ar: 'يرجى اختيار الجنس.', en: 'Please select a gender.', de: 'Bitte wähle das Geschlecht aus.' },
-    'reg.guardian': { ar: 'اسم الوالد / الولي', en: 'Parent / guardian name', de: 'Name der Eltern / Erziehungsberechtigten' },
+    'reg.guardian': { ar: 'اسم والد/ولي الطالب', en: 'Parent / guardian name', de: 'Name der Eltern / Erziehungsberechtigten' },
     'reg.guardian.ph': { ar: 'مثال: أحمد محمد', en: 'e.g. Ahmed Mohammed', de: 'z. B. Ahmed Mohammed' },
     'reg.guardian.hint': {
         ar: 'مطلوب للأطفال والناشئة (أقل من 18 سنة)، واختياري للبالغين',
@@ -225,17 +252,20 @@ const I18N = {
     'age.teen':  { ar: 'ناشئة (12 - 17)', en: 'Teens (12–17)', de: 'Jugendliche (12–17)' },
     'age.adult': { ar: 'بالغون (18+)', en: 'Adults (18+)', de: 'Erwachsene (ab 18)' },
     'reg.submit':  { ar: 'إرسال طلب التسجيل', en: 'Submit registration', de: 'Anmeldung absenden' },
-    'reg.sending': { ar: 'جارٍ الإرسال...', en: 'Sending...', de: 'Wird gesendet …' },
-    'reg.privacy': {
+    'reg.sending': { ar: 'جارٍ الإرسال...', en: 'Sending...', de: 'Wird gesendet …' }
+      /*
+      ,
+      'reg.privacy': {
         ar: 'نستخدم بياناتك للتواصل معك بخصوص التسجيل فقط.',
         en: 'We use your details only to contact you about your registration.',
         de: 'Wir verwenden deine Angaben ausschließlich, um dich zu deiner Anmeldung zu kontaktieren.'
+        */
     },
     'reg.success.title': { ar: 'تم استلام طلبك بنجاح', en: 'Your request has been received', de: 'Deine Anfrage ist eingegangen' },
     'reg.success.desc': {
-        ar: 'سيتواصل معك فريقنا التعليمي قريباً عبر الجوال أو البريد الإلكتروني المسجّل.',
-        en: 'Our academic team will reach out shortly via the phone number or email you provided.',
-        de: 'Unser Team meldet sich in Kürze per Telefon oder über die angegebene E-Mail-Adresse bei dir.'
+        ar: 'سيتواصل معك فريقنا التعليمي قريباً عبر الواتساب أو البريد الإلكتروني المسجّل.',
+        en: 'Our academic team will reach out shortly via the WhatsApp number or email you provided.',
+        de: 'Unser Team meldet sich in Kürze per WhatsApp-Nummer oder über die angegebene E-Mail-Adresse bei dir.'
     },
     'err.name':  { ar: 'يرجى إدخال اسمك الكامل.', en: 'Please enter your full name.', de: 'Bitte gib deinen vollständigen Namen ein.' },
     'err.guardian': {
@@ -297,12 +327,14 @@ const I18N = {
 };
 
 /* رموز الدول (الاسم بالثلاث لغات) */
-const DEFAULT_COUNTRY_CODE = '+49'; // ألمانيا
+const DEFAULT_COUNTRY_CODE = '+963'; // سوريا
 const COUNTRIES = [
     /* الافتراضي: ألمانيا */
-    { code: '+49',  ar: 'ألمانيا', en: 'Germany', de: 'Deutschland' },
+    { code: '+963', ar: 'سوريا', en: 'Syria', de: 'Syrien' },
+   
 
     /* أوروبا: الدول الناطقة بالألمانية والإنجليزية أولاً */
+    { code: '+49',  ar: 'ألمانيا', en: 'Germany', de: 'Deutschland' },
     { code: '+43',  ar: 'النمسا', en: 'Austria', de: 'Österreich' },
     { code: '+41',  ar: 'سويسرا', en: 'Switzerland', de: 'Schweiz' },
     { code: '+423', ar: 'ليختنشتاين', en: 'Liechtenstein', de: 'Liechtenstein' },
@@ -358,7 +390,6 @@ const COUNTRIES = [
     { code: '+973', ar: 'البحرين', en: 'Bahrain', de: 'Bahrain' },
     { code: '+968', ar: 'عُمان', en: 'Oman', de: 'Oman' },
     { code: '+20',  ar: 'مصر', en: 'Egypt', de: 'Ägypten' },
-    { code: '+963', ar: 'سوريا', en: 'Syria', de: 'Syrien' },
     { code: '+961', ar: 'لبنان', en: 'Lebanon', de: 'Libanon' },
     { code: '+964', ar: 'العراق', en: 'Iraq', de: 'Irak' },
     { code: '+970', ar: 'فلسطين', en: 'Palestine', de: 'Palästina' },
