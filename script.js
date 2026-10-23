@@ -42,7 +42,7 @@ const I18N = {
        ملاحظة: استخدم (\') عند وجود فاصلة عليا داخل النص الإنجليزي. */
     'footer.privacy': { ar: 'شروط الخصوصية', en: 'Privacy Terms', de: 'Datenschutzbestimmungen' },
     'privacy.body': {
-        ar: '<p>
+        ar: '`<p>
            <h4>سياسة الخصوصية لـ <strong>موقع إتقان البيان</strong></h4>
 <p>نلتزم بحماية بياناتك الشخصية ومعالجتها بأمان وفقاً للائحة <strong>(GDPR)</strong>.</p>
 
@@ -72,7 +72,7 @@ const I18N = {
 
 <p><strong>7. ممارسة حقوقك:</strong></p>
 <p>للتعديل أو الحذف المباشر، راسلنا عبر البريد الإلكتروني: <strong>itqan.albayan.academy@gmail.com</strong></p>
-</p>',
+</p>`',
         en: '<p>The privacy terms text will be added here.</p>',
         de: '<p>Der Text der Datenschutzbestimmungen wird hier ergänzt.</p>'
     },
