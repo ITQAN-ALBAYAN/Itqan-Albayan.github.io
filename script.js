@@ -42,8 +42,7 @@ const I18N = {
        ملاحظة: استخدم (\') عند وجود فاصلة عليا داخل النص الإنجليزي. */
     'footer.privacy': { ar: 'شروط الخصوصية', en: 'Privacy Terms', de: 'Datenschutzbestimmungen' },
     'privacy.body': {
-        ar: '`<p>
-           <h4>سياسة الخصوصية لـ <strong>موقع إتقان البيان</strong></h4>
+        ar: `<h4>سياسة الخصوصية لـ <strong>موقع إتقان البيان</strong></h4>
 <p>نلتزم بحماية بياناتك الشخصية ومعالجتها بأمان وفقاً للائحة <strong>(GDPR)</strong>.</p>
 
 <p><strong>1. البيانات التي نجمعها والأغراض:</strong></p>
@@ -61,7 +60,7 @@ const I18N = {
 <p><strong>4. نقل البيانات الدولي:</strong></p>
 <p>تُعالج بعض البيانات خارج الاتحاد الأوروبي (في أمريكا) بواسطة شركائنا مع ضمان الحماية عبر الشروط التعاقدية القياسية <strong>(SCCs)</strong>.</p>
 
-<p><strong>5. حماية القُصَّر:</strong></p>
+<p><strong>5. حماية القُصَّر:</strong></p>
 <p>الموقع غير موجه للأطفال دون سن <strong>16 عاماً</strong>، ولا نجمع بياناتهم عمداً.</p>
 
 <p><strong>6. حقوقك القانونية (المواد 15 و17 من GDPR):</strong></p>
@@ -71,10 +70,65 @@ const I18N = {
 </ul>
 
 <p><strong>7. ممارسة حقوقك:</strong></p>
-<p>للتعديل أو الحذف المباشر، راسلنا عبر البريد الإلكتروني: <strong>itqan.albayan.academy@gmail.com</strong></p>
-</p>`',
-        en: '<p>The privacy terms text will be added here.</p>',
-        de: '<p>Der Text der Datenschutzbestimmungen wird hier ergänzt.</p>'
+<p>للتعديل أو الحذف المباشر، راسلنا عبر البريد الإلكتروني: <strong>itqan.albayan.academy@gmail.com</strong></p>`,
+        en: `<h4>Privacy Policy of the <strong>Itqan Al-Bayan website</strong></h4>
+<p>We are committed to protecting your personal data and processing it securely in accordance with the <strong>GDPR</strong>.</p>
+
+<p><strong>1. Data we collect and purposes:</strong></p>
+<ul>
+  <li><strong>Contact data:</strong> (name, email address, message text) to respond to your enquiries.</li>
+  <li><strong>Browsing data (cookies):</strong> (IP address, browser type, pages visited) via Google Analytics to improve the website.</li>
+</ul>
+
+<p><strong>2. Legal basis:</strong></p>
+<p>Your explicit consent when you submit the form, and our legitimate interest in analysing and securing the website.</p>
+
+<p><strong>3. Third parties with whom we share data:</strong></p>
+<p>Trusted services under data processing agreements (DPAs): <strong>Web3Forms</strong> for sending messages and <strong>Google Analytics</strong> for statistics.</p>
+
+<p><strong>4. International data transfers:</strong></p>
+<p>Some data is processed outside the European Union (in the USA) by our partners, with protection ensured through the <strong>Standard Contractual Clauses (SCCs)</strong>.</p>
+
+<p><strong>5. Protection of minors:</strong></p>
+<p>The website is not directed at children under <strong>16 years of age</strong>, and we do not knowingly collect their data.</p>
+
+<p><strong>6. Your legal rights (Articles 15 and 17 GDPR):</strong></p>
+<ul>
+  <li><strong>Right of access:</strong> request a copy of the personal data we store about you.</li>
+  <li><strong>Right to erasure:</strong> request permanent deletion of your data from our servers and those of our partners.</li>
+</ul>
+
+<p><strong>7. Exercising your rights:</strong></p>
+<p>To correct or delete your data directly, email us at: <strong>itqan.albayan.academy@gmail.com</strong></p>`,
+        de: `<h4>Datenschutzerklärung der Website <strong>Itqan Al-Bayan</strong></h4>
+<p>Wir verpflichten uns, deine personenbezogenen Daten zu schützen und sie gemäß der <strong>DSGVO</strong> sicher zu verarbeiten.</p>
+
+<p><strong>1. Erhobene Daten und Zwecke:</strong></p>
+<ul>
+  <li><strong>Kontaktdaten:</strong> (Name, E-Mail-Adresse, Nachrichtentext), um deine Anfragen zu beantworten.</li>
+  <li><strong>Browsing-Daten (Cookies):</strong> (IP-Adresse, Browsertyp, besuchte Seiten) über Google Analytics zur Verbesserung der Website.</li>
+</ul>
+
+<p><strong>2. Rechtsgrundlage:</strong></p>
+<p>Deine ausdrückliche Einwilligung beim Absenden des Formulars sowie unser berechtigtes Interesse an der Analyse und Absicherung der Website.</p>
+
+<p><strong>3. Dritte, an die wir Daten weitergeben:</strong></p>
+<p>Vertrauenswürdige Dienste auf Grundlage von Auftragsverarbeitungsverträgen (AVV): <strong>Web3Forms</strong> für den Nachrichtenversand und <strong>Google Analytics</strong> für Statistiken.</p>
+
+<p><strong>4. Internationale Datenübermittlung:</strong></p>
+<p>Einige Daten werden von unseren Partnern außerhalb der Europäischen Union (in den USA) verarbeitet; der Schutz wird durch die <strong>Standardvertragsklauseln (SCCs)</strong> sichergestellt.</p>
+
+<p><strong>5. Schutz Minderjähriger:</strong></p>
+<p>Die Website richtet sich nicht an Kinder unter <strong>16 Jahren</strong>, und wir erheben deren Daten nicht wissentlich.</p>
+
+<p><strong>6. Deine Rechte (Art. 15 und 17 DSGVO):</strong></p>
+<ul>
+  <li><strong>Auskunftsrecht:</strong> eine Kopie deiner bei uns gespeicherten personenbezogenen Daten anfordern.</li>
+  <li><strong>Recht auf Löschung:</strong> die endgültige Löschung deiner Daten von unseren Servern und denen unserer Partner verlangen.</li>
+</ul>
+
+<p><strong>7. Ausübung deiner Rechte:</strong></p>
+<p>Zur Berichtigung oder Löschung schreibe uns per E-Mail: <strong>itqan.albayan.academy@gmail.com</strong></p>`
     },
     'reg.consent.pre':  { ar: 'أوافق على', en: 'I agree to the', de: 'Ich stimme den' },
     'reg.consent.link': { ar: 'شروط الخصوصية', en: 'Privacy Terms', de: 'Datenschutzbestimmungen' },
@@ -237,7 +291,7 @@ const I18N = {
     'gender.male': { ar: 'ذكر', en: 'Male', de: 'Männlich' },
     'gender.female': { ar: 'أنثى', en: 'Female', de: 'Weiblich' },
     'err.gender': { ar: 'يرجى اختيار الجنس.', en: 'Please select a gender.', de: 'Bitte wähle das Geschlecht aus.' },
-    'reg.guardian': { ar: 'اسم والد/ولي الطالب', en: 'Parent / guardian name', de: 'Name der Eltern / Erziehungsberechtigten' },
+    'reg.guardian': { ar: 'اسم والد/ولي الطالب', en: "Student's parent / guardian name", de: 'Name der Eltern / Erziehungsberechtigten der lernenden Person' },
     'reg.guardian.ph': { ar: 'مثال: أحمد محمد', en: 'e.g. Ahmed Mohammed', de: 'z. B. Ahmed Mohammed' },
     'reg.guardian.hint': {
         ar: 'مطلوب للأطفال والناشئة (أقل من 18 سنة)، واختياري للبالغين',
@@ -252,15 +306,7 @@ const I18N = {
     'age.teen':  { ar: 'ناشئة (12 - 17)', en: 'Teens (12–17)', de: 'Jugendliche (12–17)' },
     'age.adult': { ar: 'بالغون (18+)', en: 'Adults (18+)', de: 'Erwachsene (ab 18)' },
     'reg.submit':  { ar: 'إرسال طلب التسجيل', en: 'Submit registration', de: 'Anmeldung absenden' },
-    'reg.sending': { ar: 'جارٍ الإرسال...', en: 'Sending...', de: 'Wird gesendet …' }
-      /*
-      ,
-      'reg.privacy': {
-        ar: 'نستخدم بياناتك للتواصل معك بخصوص التسجيل فقط.',
-        en: 'We use your details only to contact you about your registration.',
-        de: 'Wir verwenden deine Angaben ausschließlich, um dich zu deiner Anmeldung zu kontaktieren.'
-        */
-    },
+    'reg.sending': { ar: 'جارٍ الإرسال...', en: 'Sending...', de: 'Wird gesendet …' },
     'reg.success.title': { ar: 'تم استلام طلبك بنجاح', en: 'Your request has been received', de: 'Deine Anfrage ist eingegangen' },
     'reg.success.desc': {
         ar: 'سيتواصل معك فريقنا التعليمي قريباً عبر الواتساب أو البريد الإلكتروني المسجّل.',
@@ -312,9 +358,9 @@ const I18N = {
     'promo.cta': { ar: 'احجز حصتك المجانية', en: 'Book Your Free Session', de: 'Kostenlose Stunde buchen' },
     'reg.notes': { ar: 'ملاحظات (اختياري)', en: 'Notes (optional)', de: 'Anmerkungen (optional)' },
     'reg.notes.ph': {
-        ar: ' الأوقات المناسبة للتواصل، مستوى الطالب الحالي…',
-        en: ' best times to reach you, current level…',
-        de: ' beste Erreichbarkeit, aktuelles Niveau …'
+        ar: 'الأوقات المناسبة للتواصل، مستوى الطالب الحالي…',
+        en: 'Best times to reach you, current level…',
+        de: 'Beste Erreichbarkeit, aktuelles Niveau …'
     },
     'map.open': { ar: 'فتح في خرائط جوجل', en: 'Open in Google Maps', de: 'In Google Maps öffnen' },
     'footer.links':   { ar: 'روابط سريعة', en: 'Quick Links', de: 'Schnellzugriff' },
