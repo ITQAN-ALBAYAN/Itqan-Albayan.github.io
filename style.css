@@ -364,4 +364,8 @@ footer li, footer a { overflow-wrap: anywhere; }
     line-height: 1.35;
     text-align: center;
 }
+.map-pin-name { display: block; }
+.map-pin-rating { display: block; margin-top: .1rem; font-size: .7rem; font-weight: 600; color: #475569; }
+.map-pin-rating[hidden] { display: none; }
+.map-star { color: #d97706; }
 .map-pin svg { width: 1.6rem; height: 2.1rem; filter: drop-shadow(0 1px 1px rgba(0,0,0,.35)); }

@@ -597,6 +597,18 @@ function initMap() {
             pinEl.style.left = (stage.clientWidth / 2 + p.x - c.x) + 'px';
             pinEl.style.top = (stage.clientHeight / 2 + p.y - c.y) + 'px';
         };
+        // التقييم بجانب الاسم (قيم يدوية من data-rating / data-reviews)
+        const ratingEl = $('map-pin-rating');
+        if (ratingEl && box.dataset.rating) {
+            ratingEl.textContent = '';
+            ratingEl.append(box.dataset.rating + ' ');
+            const star = document.createElement('span');
+            star.className = 'map-star';
+            star.textContent = '\u2605';
+            ratingEl.append(star);
+            if (box.dataset.reviews) ratingEl.append(' (' + box.dataset.reviews + ')');
+            ratingEl.hidden = false;
+        }
         if (pinEl) {
             place();
             pinEl.classList.add('ready');

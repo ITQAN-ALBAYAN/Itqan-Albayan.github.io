@@ -548,15 +548,16 @@
             -->
             <!--
                 ===== إعدادات الخريطة الحالية (تُقرأ من script.js) =====
-                data-center : مركز الخريطة (خط العرض,خط الطول) — هولندا
+                data-center : مركز الخريطة (خط العرض,خط الطول) — حالياً نفس مكان الدبوس؛ غيّره لتحريك الخريطة (مثلاً هولندا: 52.1326,5.2913)
                 data-zoom   : درجة التقريب (رقم صحيح؛ كلما صغر ظهرت مساحة أكبر)
                 data-pin    : مكان الدبوس (إحداثيات إتقان البيان في ألمانيا)
+                data-rating / data-reviews : التقييم وعدد المراجعات المعروضان بجانب الاسم (يدوية، لا تتحدث تلقائياً من جوجل)
                 data-link   : رابط زر "فتح في خرائط جوجل"
                 الدبوس والاسم يُرسمان فوق الخريطة، والخريطة ثابتة؛ الضغط عليها يفتح خرائط جوجل.
                 للرجوع إلى تضمين جوجل القديم: احذف data-center وdata-zoom وdata-pin وضع بدلها data-embed="..." بأحد الرابطين:
                 رابط CID: https://www.google.com/maps?cid=16720778666369415783&ll=52.1326,5.2913&z=4&output=embed
             -->
-            <div id="map-box" data-center="52.1326,5.2913" data-zoom="6" data-pin="51.1044793,10.2929565" data-link="https://maps.app.goo.gl/CJnhJmpuDQcuhWEn8">
+            <div id="map-box" data-center="51.1044793,10.2929565" data-zoom="4" data-pin="51.1044793,10.2929565" data-rating="5.0" data-reviews="1" data-link="https://maps.app.goo.gl/CJnhJmpuDQcuhWEn8">
                 <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-100 h-80 md:h-96">
                     <div id="map-placeholder" class="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center text-slate-500">
                         <span class="text-5xl" aria-hidden="true">📍</span>
@@ -568,7 +569,10 @@
                     <!-- طبقتان فوق الخريطة: رابط يغطيها (يفتح خرائط جوجل) + دبوس الأكاديمية مع اسمها -->
                     <a id="map-hit" class="map-hit" href="#" target="_blank" rel="noopener noreferrer" data-i18n-aria="map.open" aria-label="فتح في خرائط جوجل"></a>
                     <div id="map-pin" class="map-pin" aria-hidden="true">
-                        <span class="map-pin-label" data-i18n="map.pin">أكاديمية إتقان البيان</span>
+                        <span class="map-pin-label">
+                            <span class="map-pin-name" data-i18n="map.pin">أكاديمية إتقان البيان</span>
+                            <span class="map-pin-rating" id="map-pin-rating" dir="ltr" hidden></span>
+                        </span>
                         <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.2 0 11.7 0 20 12 32 12 32s12-12 12-20.3C24 5.2 18.6 0 12 0z" fill="#dc2626"/><circle cx="12" cy="11.5" r="4.5" fill="#fff"/></svg>
                     </div>
                 </div>
