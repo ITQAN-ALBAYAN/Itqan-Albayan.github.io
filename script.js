@@ -362,6 +362,7 @@ const I18N = {
         en: 'Best times to reach you, current level…',
         de: 'Beste Erreichbarkeit, aktuelles Niveau …'
     },
+    'map.pin': { ar: 'أكاديمية إتقان البيان', en: 'Itqan Al-Bayan Academy', de: 'Itqan Al-Bayan Akademie' },
     'map.open': { ar: 'فتح في خرائط جوجل', en: 'Open in Google Maps', de: 'In Google Maps öffnen' },
     'footer.links':   { ar: 'روابط سريعة', en: 'Quick Links', de: 'Schnellzugriff' },
     'footer.contact': { ar: 'تواصل معنا', en: 'Contact Us', de: 'Kontakt' },
@@ -543,6 +544,21 @@ function extractEmbedUrl(raw) {
     return isEmbed ? url : '';
 }
 
+// إسقاط ميركاتور (نفس إسقاط خرائط جوجل): تحويل إحداثيات إلى بكسلات على درجة تقريب معيّنة
+function mercatorPx(lat, lng, zoom) {
+    const scale = 256 * Math.pow(2, zoom);
+    const sin = Math.sin(lat * Math.PI / 180);
+    return {
+        x: (lng + 180) / 360 * scale,
+        y: (0.5 - Math.log((1 + sin) / (1 - sin)) / (4 * Math.PI)) * scale
+    };
+}
+
+function parseLatLng(str) {
+    const p = (str || '').split(',').map(Number);
+    return (p.length === 2 && p.every(Number.isFinite)) ? { lat: p[0], lng: p[1] } : null;
+}
+
 function initMap() {
     const box = $('map-box');
     if (!box) return;
@@ -551,7 +567,13 @@ function initMap() {
     const openBtn = $('map-open');
 
     const rawEmbed = (box.dataset.embed || '').trim();
-    const embedUrl = extractEmbedUrl(rawEmbed);
+    // الوضع الجديد: مركز + تقريب + دبوس مستقل (data-center / data-zoom / data-pin)
+    const center = parseLatLng(box.dataset.center);
+    const pin = parseLatLng(box.dataset.pin);
+    const zoom = Number(box.dataset.zoom) || 4;
+    const embedUrl = center
+        ? 'https://www.google.com/maps?ll=' + center.lat + ',' + center.lng + '&z=' + zoom + '&t=m&output=embed'
+        : extractEmbedUrl(rawEmbed);
     // رابط المشاركة العادي (أو رابط عادي لصق خطأً في خانة التضمين) يُستخدم لزر "فتح في خرائط جوجل"
     let link = (box.dataset.link || '').trim();
     if (!link && rawEmbed && !embedUrl && /^https:\/\//i.test(rawEmbed)) link = rawEmbed;
@@ -562,6 +584,26 @@ function initMap() {
         if (placeholder) placeholder.classList.add('hidden');
     } else if (rawEmbed) {
         console.warn('الخريطة: القيمة في data-embed ليست رابط تضمين صالحاً. استخدم: خرائط جوجل ← مشاركة ← تضمين خريطة، وانسخ قيمة src فقط.');
+    }
+    // الدبوس واسم الأكاديمية فوق الخريطة، ويُحسب مكانه من المركز ودرجة التقريب والإحداثيات
+    if (center && pin && frame) {
+        const stage = frame.parentElement;
+        const pinEl = $('map-pin');
+        const hit = $('map-hit');
+        frame.classList.add('map-frame-static'); // خريطة ثابتة كي لا ينزاح الدبوس عند السحب
+        const place = () => {
+            const c = mercatorPx(center.lat, center.lng, zoom);
+            const p = mercatorPx(pin.lat, pin.lng, zoom);
+            pinEl.style.left = (stage.clientWidth / 2 + p.x - c.x) + 'px';
+            pinEl.style.top = (stage.clientHeight / 2 + p.y - c.y) + 'px';
+        };
+        if (pinEl) {
+            place();
+            pinEl.classList.add('ready');
+            if ('ResizeObserver' in window) new ResizeObserver(place).observe(stage);
+            else window.addEventListener('resize', place);
+        }
+        if (hit && /^https:\/\//i.test(link)) { hit.href = link; hit.classList.add('ready'); }
     }
     if (openBtn && /^https:\/\//i.test(link)) {
         openBtn.href = link;

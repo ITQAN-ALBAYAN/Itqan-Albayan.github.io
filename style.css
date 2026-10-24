@@ -333,3 +333,35 @@ footer li, footer a { overflow-wrap: anywhere; }
     nav .nav-bar { height: 3.75rem; }      /* بدلاً من 5rem؛ الشعار 3rem فيبقى بحجمه الكامل */
     section[id] { scroll-margin-top: 4.25rem; }
 }
+
+/* ===================== الخريطة: دبوس الأكاديمية فوق خريطة جوجل ===================== */
+.map-frame-static { pointer-events: none; }
+
+/* رابط شفاف يغطي الخريطة ويفتح خرائط جوجل؛ يُترك الشريط السفلي حراً ليبقى شعار جوجل وروابطه ظاهرة */
+.map-hit { position: absolute; inset: 0 0 2rem 0; display: none; z-index: 2; cursor: pointer; }
+.map-hit.ready { display: block; }
+
+.map-pin {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -100%);   /* رأس الدبوس السفلي هو نقطة الإحداثيات */
+    z-index: 3;
+    pointer-events: none;
+}
+.map-pin.ready { display: flex; }
+.map-pin-label {
+    max-width: 150px;
+    margin-bottom: .2rem;
+    padding: .2rem .5rem;
+    background: #fff;
+    color: #0f172a;
+    border-radius: .4rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+}
+.map-pin svg { width: 1.6rem; height: 2.1rem; filter: drop-shadow(0 1px 1px rgba(0,0,0,.35)); }
