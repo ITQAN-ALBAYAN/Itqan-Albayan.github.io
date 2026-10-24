@@ -328,3 +328,8 @@ footer li, footer a { overflow-wrap: anywhere; }
     .lang-toggle { padding: .4rem .45rem; gap: .25rem; }
 }
 
+/* ===================== الجوال: شريط تنقل أقل ارتفاعاً (الشعار والمحتويات بحجمها نفسه) ===================== */
+@media (max-width: 639px) {
+    nav .nav-bar { height: 3.75rem; }      /* بدلاً من 5rem؛ الشعار 3rem فيبقى بحجمه الكامل */
+    section[id] { scroll-margin-top: 4.25rem; }
+}
